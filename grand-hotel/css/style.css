@@ -724,7 +724,7 @@ body {
       margin-bottom: 3rem;
    }
 
-   .main-part {
+/*    .main-part {
       flex-direction: column;
    }
 
@@ -734,7 +734,7 @@ body {
 
    .footer-list-item {
       margin-left: 3rem;
-   }
+   } */
 }
 
 /* end 1400px media query */
