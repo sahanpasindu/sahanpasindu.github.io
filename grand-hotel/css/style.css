@@ -723,18 +723,6 @@ body {
    .customer-card:first-child {
       margin-bottom: 3rem;
    }
-
-/*    .main-part {
-      flex-direction: column;
-   }
-
-   .footer-list {
-      display: flex;
-   }
-
-   .footer-list-item {
-      margin-left: 3rem;
-   } */
 }
 
 /* end 1400px media query */
@@ -754,6 +742,19 @@ body {
    .image {
       width: 26rem;
    }
+   
+   .main-part {
+      flex-direction: column;
+   }
+
+   .footer-list {
+      display: flex;
+   }
+
+   .footer-list-item {
+      margin-left: 3rem;
+   }
+   
 }
 
 /* 1200px end media query */
@@ -964,7 +965,6 @@ body {
    .customer-card {
       flex-direction: column;
       width: 22rem;
-      margin-bottom: 20rem;
    }
 
    .customer-image {
