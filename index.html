@@ -3,23 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Link Preview / Social Preview -->
-<meta property="og:title" content="Nirmal Edirisinghe | SAP Admin & App Developer" />
-<meta property="og:description" content="SAP Business One Administrator, Laravel Developer, and Flutter App Creator building practical systems for real business problems." />
-<meta property="og:image" content="https://avatars.githubusercontent.com/u/26884480?v=4" />
-<meta property="og:url" content="https://sahanpasindu.github.io/" />
-<meta property="og:type" content="website" />
 
-<!-- Twitter / X Preview -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Nirmal Edirisinghe | SAP Admin & App Developer" />
-<meta name="twitter:description" content="SAP Business One Administrator, Laravel Developer, and Flutter App Creator building practical systems for real business problems." />
-<meta name="twitter:image" content="https://avatars.githubusercontent.com/u/26884480?v=4" />
   <title>Nirmal Edirisinghe | SAP Admin & App Developer</title>
-  <meta name="description" content="Personal portfolio of Nirmal Edirisinghe - SAP Administrator, Laravel developer, and mobile app creator." />
+  <meta name="description" content="Personal portfolio of Nirmal Edirisinghe - SAP Business One Administrator, Laravel developer, Flutter app creator, and business systems problem solver." />
+
+  <!-- Link Preview / Social Preview -->
+  <meta property="og:title" content="Nirmal Edirisinghe | SAP Admin & App Developer" />
+  <meta property="og:description" content="SAP Business One Administrator, Laravel Developer, Flutter App Creator, and business systems problem solver." />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/26884480?v=4" />
+  <meta property="og:url" content="https://sahanpasindu.github.io/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter / X Preview -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nirmal Edirisinghe | SAP Admin & App Developer" />
+  <meta name="twitter:description" content="SAP Business One Administrator, Laravel Developer, Flutter App Creator, and business systems problem solver." />
+  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/26884480?v=4" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #07111f;
@@ -33,7 +37,6 @@
       --accent: #a78bfa;
       --warning: #f59e0b;
       --border: rgba(255, 255, 255, 0.14);
-      --line: rgba(148, 163, 184, 0.22);
       --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
     }
 
@@ -139,7 +142,7 @@
 
     .nav-links {
       display: flex;
-      gap: 22px;
+      gap: 18px;
       color: var(--muted);
       font-size: 14px;
       font-weight: 700;
@@ -170,6 +173,22 @@
       width: 100%;
     }
 
+    .nav-links a.active {
+      color: var(--text);
+    }
+
+    .nav-links a.active::after {
+      width: 100%;
+      background: linear-gradient(90deg, var(--secondary), var(--primary), var(--accent));
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.45);
+    }
+
+    section,
+    .hero-wrap,
+    .profile-card {
+      scroll-margin-top: 96px;
+    }
+
     main,
     section,
     .hero-wrap,
@@ -178,7 +197,9 @@
       z-index: 1;
     }
 
-    .hero-wrap {
+    .hero-wrap,
+    .section-strip,
+    footer {
       position: relative;
       padding-left: 112px;
     }
@@ -188,7 +209,6 @@
       content: "";
       position: absolute;
       left: 64px;
-      top: 104px;
       width: 17px;
       height: 17px;
       border-radius: 999px;
@@ -199,11 +219,32 @@
       z-index: 2;
     }
 
+    .hero-wrap::before {
+      top: 104px;
+    }
+
+    .section-strip::before {
+      top: 74px;
+      width: 15px;
+      height: 15px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+
+    .section-strip::after {
+      content: "";
+      position: absolute;
+      left: 72px;
+      top: 94px;
+      width: 1px;
+      height: 76px;
+      background: linear-gradient(to bottom, rgba(56, 189, 248, 0.45), transparent);
+      pointer-events: none;
+    }
+
     .hero-label,
     .strip-label {
       position: absolute;
       left: 22px;
-      top: 104px;
       transform: translateX(-50%) rotate(-90deg);
       transform-origin: center;
       color: rgba(203, 213, 225, 0.78);
@@ -212,6 +253,14 @@
       letter-spacing: 0.22em;
       text-transform: uppercase;
       white-space: nowrap;
+    }
+
+    .hero-label {
+      top: 104px;
+    }
+
+    .strip-label {
+      top: 73px;
     }
 
     .hero {
@@ -364,23 +413,16 @@
       border-radius: 30px;
       display: grid;
       place-items: center;
-      font-size: 36px;
-      font-weight: 900;
-      background: linear-gradient(135deg, #38bdf8, #22c55e);
       margin-bottom: 22px;
       box-shadow: 0 20px 45px rgba(34, 197, 94, 0.22);
     }
 
     .profile-photo {
-  object-fit: cover;
-  border: 3px solid rgba(255, 255, 255, 0.20);
-  padding: 3px;
-  background: linear-gradient(
-    135deg,
-    rgba(56, 189, 248, 0.35),
-    rgba(34, 197, 94, 0.25)
-  );
-}
+      object-fit: cover;
+      border: 3px solid rgba(255, 255, 255, 0.20);
+      padding: 3px;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.35), rgba(34, 197, 94, 0.25));
+    }
 
     .profile-card h2 {
       position: relative;
@@ -436,33 +478,6 @@
       padding: 62px 0;
     }
 
-    .section-strip {
-      position: relative;
-      padding-left: 112px;
-    }
-
-    .section-strip::before {
-      top: 74px;
-      width: 15px;
-      height: 15px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-    }
-
-    .section-strip::after {
-      content: "";
-      position: absolute;
-      left: 72px;
-      top: 94px;
-      width: 1px;
-      height: 76px;
-      background: linear-gradient(to bottom, rgba(56, 189, 248, 0.45), transparent);
-      pointer-events: none;
-    }
-
-    .strip-label {
-      top: 73px;
-    }
-
     .section-head {
       display: flex;
       justify-content: space-between;
@@ -487,17 +502,28 @@
     }
 
     .section-head p {
-      max-width: 440px;
+      max-width: 460px;
       color: var(--muted);
     }
 
-    .grid-3 {
+    .grid-3,
+    .showcase-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .service-card, .project-card, .contact-card {
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .showcase-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .service-card,
+    .project-card,
+    .contact-card,
+    .link-card {
       padding: 24px;
       border-radius: 26px;
       background: var(--card);
@@ -506,7 +532,10 @@
       box-shadow: 0 18px 48px rgba(0, 0, 0, 0.14);
     }
 
-    .service-card:hover, .project-card:hover, .contact-card:hover {
+    .service-card:hover,
+    .project-card:hover,
+    .contact-card:hover,
+    .link-card:hover {
       transform: translateY(-4px);
       background: var(--card-strong);
       border-color: rgba(56, 189, 248, 0.28);
@@ -523,13 +552,18 @@
       font-size: 22px;
     }
 
-    .service-card h4, .project-card h4 {
+    .service-card h4,
+    .project-card h4,
+    .link-card h4 {
       font-size: 19px;
       margin-bottom: 9px;
       letter-spacing: -0.025em;
     }
 
-    .service-card p, .project-card p, .contact-card p {
+    .service-card p,
+    .project-card p,
+    .contact-card p,
+    .link-card p {
       color: var(--muted);
       font-size: 14px;
     }
@@ -549,12 +583,6 @@
       color: var(--muted);
       font-size: 12px;
       font-weight: 800;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 18px;
     }
 
     .project-card.featured {
@@ -580,6 +608,50 @@
       font-size: 12px;
       font-weight: 900;
       white-space: nowrap;
+    }
+
+    .status.blue {
+      background: rgba(56, 189, 248, 0.13);
+      border-color: rgba(56, 189, 248, 0.22);
+      color: #bae6fd;
+    }
+
+    .status.purple {
+      background: rgba(167, 139, 250, 0.13);
+      border-color: rgba(167, 139, 250, 0.24);
+      color: #ddd6fe;
+    }
+
+    .status.amber {
+      background: rgba(245, 158, 11, 0.13);
+      border-color: rgba(245, 158, 11, 0.24);
+      color: #fde68a;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 13px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 900;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .project-link:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.13);
     }
 
     .timeline {
@@ -630,6 +702,26 @@
       font-size: 14px;
     }
 
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .link-card {
+      min-height: 140px;
+    }
+
+    .link-card span {
+      display: inline-flex;
+      margin-bottom: 12px;
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
     .contact-wrap {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -670,10 +762,18 @@
     }
 
     footer {
-      padding: 28px 0 42px 112px;
+      padding-top: 28px;
+      padding-bottom: 42px;
       color: var(--soft);
       text-align: center;
       font-size: 14px;
+    }
+
+    @media (max-width: 1060px) {
+      .nav-links {
+        gap: 12px;
+        font-size: 13px;
+      }
     }
 
     @media (max-width: 980px) {
@@ -700,6 +800,10 @@
       .strip-label {
         display: none;
       }
+
+      .quick-links {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 860px) {
@@ -708,7 +812,7 @@
       }
 
       .hero,
-      .projects-grid,
+      .showcase-grid,
       .contact-wrap {
         grid-template-columns: 1fr;
       }
@@ -764,12 +868,21 @@
         font-size: 16px;
       }
 
-      .stats {
+      .stats,
+      .quick-links {
         grid-template-columns: 1fr;
       }
 
+      .project-top,
       .timeline-item {
         grid-template-columns: 1fr;
+      }
+
+      .project-top {
+        display: grid;
+      }
+
+      .timeline-item {
         gap: 8px;
       }
 
@@ -783,6 +896,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container nav">
@@ -790,11 +904,13 @@
         <span class="logo">N</span>
         <span>Nirmal</span>
       </a>
+
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#about">About</a>
-        <a href="#youtube">YouTube</a>
+        <a href="#links">Links</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#youtube">YouTube</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -804,18 +920,25 @@
   <main id="home">
     <div class="hero-wrap">
       <span class="hero-label">Intro</span>
+
       <div class="container hero">
         <div>
-          <div class="badge"><span class="pulse"></span> SAP Admin • Developer • Problem Solver</div>
+          <div class="badge"><span class="pulse"></span> SAP Admin • Laravel Developer • Flutter App Creator</div>
+
           <h1>Building practical systems that make work <span class="gradient-text">faster and clearer.</span></h1>
+
           <p>
             I’m Nirmal Edirisinghe, an SAP Business One administrator and application developer from Sri Lanka.
-            I focus on business process improvements, internal systems, reports, automation, and clean digital products.
+            I focus on business process improvements, internal systems, CMS dashboards, reports, automation,
+            and clean digital products.
           </p>
+
           <div class="hero-actions">
             <a class="btn btn-primary" href="#projects">View My Work</a>
+            <a class="btn btn-outline" href="https://github.com/sahanpasindu" target="_blank" rel="noopener">GitHub Profile</a>
             <a class="btn btn-outline" href="#contact">Contact Me</a>
           </div>
+
           <div class="stats" aria-label="Profile highlights">
             <div class="stat">
               <strong>SAP B1</strong>
@@ -823,7 +946,7 @@
             </div>
             <div class="stat">
               <strong>Laravel</strong>
-              <span>Internal web systems</span>
+              <span>Internal systems & CMS</span>
             </div>
             <div class="stat">
               <strong>Flutter</strong>
@@ -833,15 +956,19 @@
         </div>
 
         <aside class="profile-card" id="about" aria-label="About Nirmal">
-          <img 
-  class="avatar profile-photo" 
-  src="https://avatars.githubusercontent.com/u/26884480?v=4" 
-  alt="Nirmal Edirisinghe profile photo" 
-/>
+          <img
+            class="avatar profile-photo"
+            src="https://avatars.githubusercontent.com/u/26884480?v=4"
+            alt="Nirmal Edirisinghe profile photo"
+          />
+
           <h2>Nirmal Edirisinghe</h2>
+
           <p>
-            I like creating simple, useful solutions for real business problems — from SAP workflows to custom apps and reports.
+            I like creating simple, useful solutions for real business problems — from SAP workflows to custom apps,
+            CMS dashboards, reports, and mobile tools.
           </p>
+
           <div class="mini-list">
             <div class="mini-item">
               <div class="mini-icon">⚙️</div>
@@ -850,18 +977,20 @@
                 <span>SAP roles, approvals, reports, warehouse and production flows.</span>
               </div>
             </div>
+
             <div class="mini-item">
               <div class="mini-icon">💻</div>
               <div>
                 <strong>Web Development</strong>
-                <span>Laravel, MySQL, dashboards, request workflows, and notifications.</span>
+                <span>Laravel, MySQL, dashboards, CMS modules, request workflows, and notifications.</span>
               </div>
             </div>
+
             <div class="mini-item">
               <div class="mini-icon">📱</div>
               <div>
                 <strong>Mobile Apps</strong>
-                <span>Flutter apps focused on utility, productivity, and clean user experience.</span>
+                <span>Flutter apps focused on utility, productivity, export features, and clean UX.</span>
               </div>
             </div>
           </div>
@@ -869,36 +998,49 @@
       </div>
     </div>
 
-    <section id="youtube" class="section-strip">
-  <span class="strip-label">YouTube</span>
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Content & Learning</div>
-        <h3>Sharing knowledge through Code Camp Sri Lanka.</h3>
-      </div>
-      <p>
-        I also create programming and technology-related content through my YouTube channel,
-        helping learners understand software development in a practical way.
-      </p>
-    </div>
+    <section id="links" class="section-strip">
+      <span class="strip-label">Links</span>
 
-    <div class="contact-card big">
-      <h4>Code Camp Sri Lanka</h4>
-      <p>
-        A learning-focused YouTube channel for programming, development, and practical tech content.
-      </p>
-      <div class="contact-links">
-        <a href="https://www.youtube.com/c/CodeCampSriLanka" target="_blank" rel="noopener">
-          Visit YouTube Channel
-        </a>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Quick Links</div>
+            <h3>My main public profiles and project links.</h3>
+          </div>
+          <p>These links show my development work, portfolio, learning content, and live project pages.</p>
+        </div>
+
+        <div class="quick-links">
+          <a class="link-card" href="https://github.com/sahanpasindu" target="_blank" rel="noopener">
+            <span>GitHub</span>
+            <h4>sahanpasindu</h4>
+            <p>Code, projects, experiments, and development work.</p>
+          </a>
+
+          <a class="link-card" href="https://www.youtube.com/c/CodeCampSriLanka" target="_blank" rel="noopener">
+            <span>YouTube</span>
+            <h4>Code Camp Sri Lanka</h4>
+            <p>Programming and technology learning content.</p>
+          </a>
+
+          <a class="link-card" href="https://sites.google.com/view/appstudio-video-splitter" target="_blank" rel="noopener">
+            <span>App Site</span>
+            <h4>Video Splitter</h4>
+            <p>Project page for my mobile video utility app.</p>
+          </a>
+
+          <a class="link-card" href="http://103.1.179.24:11221/" target="_blank" rel="noopener">
+            <span>System</span>
+            <h4>Stationery Item System</h4>
+            <p>Internal request, approval, warehouse, and stock workflow system.</p>
+          </a>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <section id="skills" class="section-strip">
       <span class="strip-label">Skills</span>
+
       <div class="container">
         <div class="section-head">
           <div>
@@ -917,6 +1059,7 @@
               <span class="tag">Authorizations</span>
               <span class="tag">Approvals</span>
               <span class="tag">Reports</span>
+              <span class="tag">Inventory</span>
             </div>
           </article>
 
@@ -928,6 +1071,7 @@
               <span class="tag">Laravel</span>
               <span class="tag">MySQL</span>
               <span class="tag">Dashboards</span>
+              <span class="tag">Workflows</span>
             </div>
           </article>
 
@@ -939,6 +1083,7 @@
               <span class="tag">Flutter</span>
               <span class="tag">Android</span>
               <span class="tag">UI/UX</span>
+              <span class="tag">Publishing</span>
             </div>
           </article>
         </div>
@@ -947,30 +1092,41 @@
 
     <section id="projects" class="section-strip">
       <span class="strip-label">Projects</span>
+
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="eyebrow">Projects</div>
-            <h3>Things I’m building and improving.</h3>
+            <div class="eyebrow">Project Showcase</div>
+            <h3>Systems, apps, and CMS work I can show.</h3>
           </div>
-          <p>Selected work areas that reflect my mix of SAP, business process, and application development experience.</p>
+          <p>Selected work that shows my practical knowledge in SAP workflows, Laravel systems, CMS dashboards, and mobile app development.</p>
         </div>
 
-        <div class="projects-grid">
+        <div class="showcase-grid">
           <article class="project-card featured">
             <div class="project-top">
               <div>
                 <h4>Stationery Item System</h4>
-                <p>A Laravel-based internal request and warehouse workflow system with approvals, issuing, disputes, GRN handling, dashboards, and activity logs.</p>
+                <p>
+                  A Laravel-based internal system for stationery requests and warehouse issue workflows. It covers user requests,
+                  supervisor approvals, warehouse issuing, partial issues, user confirmation, disputes, GRN handling,
+                  stock history, dashboards, and activity logs.
+                </p>
               </div>
-              <span class="status">Active</span>
+              <span class="status">Live System</span>
             </div>
+
             <div class="tags">
               <span class="tag">Laravel</span>
               <span class="tag">MySQL</span>
-              <span class="tag">Roles</span>
-              <span class="tag">Workflow</span>
-              <span class="tag">Inventory</span>
+              <span class="tag">Role-Based Access</span>
+              <span class="tag">Approvals</span>
+              <span class="tag">Warehouse Flow</span>
+              <span class="tag">Dashboards</span>
+            </div>
+
+            <div class="project-links">
+              <a class="project-link" href="http://103.1.179.24:11221/" target="_blank" rel="noopener">Open System</a>
             </div>
           </article>
 
@@ -978,22 +1134,152 @@
             <div class="project-top">
               <div>
                 <h4>Video Splitter App</h4>
-                <p>A simple mobile video utility app for selecting, previewing, splitting, trimming, exporting, saving, deleting, and sharing clips.</p>
+                <p>
+                  A mobile utility app for selecting, previewing, splitting, trimming, exporting, saving, deleting,
+                  and sharing video clips with a simple user experience.
+                </p>
               </div>
-              <span class="status">Mobile</span>
+              <span class="status blue">Mobile App</span>
             </div>
+
             <div class="tags">
               <span class="tag">Flutter</span>
+              <span class="tag">Dart</span>
+              <span class="tag">Android</span>
               <span class="tag">Video Tools</span>
-              <span class="tag">Play Store</span>
+              <span class="tag">Play Store Ready</span>
+            </div>
+
+            <div class="project-links">
+              <a class="project-link" href="https://sites.google.com/view/appstudio-video-splitter" target="_blank" rel="noopener">Open Project Page</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <h4>OMS LK Check Project</h4>
+                <p>
+                  A Laravel-based project that demonstrates backend and admin-dashboard knowledge, including structured data management
+                  for brands, categories, products, phones, chargers, charging protocols, and related product information.
+                </p>
+              </div>
+              <span class="status purple">Laravel / CMS</span>
+            </div>
+
+            <div class="tags">
+              <span class="tag">Laravel</span>
+              <span class="tag">Filament</span>
+              <span class="tag">Admin Panel</span>
+              <span class="tag">Product Data</span>
+              <span class="tag">CMS</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <h4>NegoIT Blog & CMS Dashboard</h4>
+                <p>
+                  Blog and CMS-related development work, including dashboard-side management for blog content and website publishing.
+                  This project shows my ability to work with content systems and admin interfaces.
+                </p>
+              </div>
+              <span class="status amber">CMS Work</span>
+            </div>
+
+            <div class="tags">
+              <span class="tag">CMS</span>
+              <span class="tag">Dashboard</span>
+              <span class="tag">Blog</span>
+              <span class="tag">PHP</span>
+              <span class="tag">Web Admin</span>
+            </div>
+
+            <div class="project-links">
+              <a class="project-link" href="https://negoit.net/index.php?components=blog&action=list" target="_blank" rel="noopener">Open Blog</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <h4>GitHub Portfolio & Projects</h4>
+                <p>
+                  My public GitHub profile contains code, learning projects, experiments, and development work.
+                  It supports this portfolio as the main technical profile link.
+                </p>
+              </div>
+              <span class="status blue">GitHub</span>
+            </div>
+
+            <div class="tags">
+              <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">Open Profile</span>
+              <span class="tag">Code</span>
+            </div>
+
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/sahanpasindu" target="_blank" rel="noopener">Visit GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <h4>SAP Reports & Process Improvements</h4>
+                <p>
+                  Practical SAP Business One work around authorizations, approvals, production and warehouse flows,
+                  reporting requirements, GRN controls, and process guidance for business users.
+                </p>
+              </div>
+              <span class="status">SAP B1</span>
+            </div>
+
+            <div class="tags">
+              <span class="tag">SAP B1</span>
+              <span class="tag">Reports</span>
+              <span class="tag">Approvals</span>
+              <span class="tag">Inventory</span>
+              <span class="tag">Production</span>
             </div>
           </article>
         </div>
       </div>
     </section>
 
+    <section id="youtube" class="section-strip">
+      <span class="strip-label">YouTube</span>
+
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Content & Learning</div>
+            <h3>Sharing knowledge through Code Camp Sri Lanka.</h3>
+          </div>
+          <p>
+            I also create programming and technology-related content through my YouTube channel,
+            helping learners understand software development in a practical way.
+          </p>
+        </div>
+
+        <div class="contact-card big">
+          <h4>Code Camp Sri Lanka</h4>
+          <p>
+            A learning-focused YouTube channel for programming, development, and practical technology content.
+          </p>
+
+          <div class="contact-links">
+            <a href="https://www.youtube.com/c/CodeCampSriLanka" target="_blank" rel="noopener">Visit YouTube Channel</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="experience" class="section-strip">
       <span class="strip-label">Experience</span>
+
       <div class="container">
         <div class="section-head">
           <div>
@@ -1011,18 +1297,28 @@
               <p>Supporting departments with SAP access, issue resolution, reports, production flows, warehouse movements, GRNs, and approval behavior.</p>
             </div>
           </div>
+
           <div class="timeline-item">
             <div class="timeline-date">Systems</div>
             <div>
               <h4>Workflow-Based Internal Applications</h4>
-              <p>Designing systems around real company needs: request approvals, status tracking, warehouse actions, user confirmations, and clear audit trails.</p>
+              <p>Designing systems around real company needs: request approvals, status tracking, warehouse actions, user confirmations, stock history, and clear audit trails.</p>
             </div>
           </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">CMS</div>
+            <div>
+              <h4>CMS Dashboards & Admin Panels</h4>
+              <p>Working with dashboard-side interfaces for content, product data, categories, brands, and business information management.</p>
+            </div>
+          </div>
+
           <div class="timeline-item">
             <div class="timeline-date">Apps</div>
             <div>
               <h4>Simple Tools With Clean UI</h4>
-              <p>Building lightweight mobile tools with strong usability, clear screens, and practical export/share features.</p>
+              <p>Building lightweight mobile tools with strong usability, clear screens, practical export/share features, and Play Store publishing preparation.</p>
             </div>
           </div>
         </div>
@@ -1031,27 +1327,35 @@
 
     <section id="contact" class="section-strip">
       <span class="strip-label">Contact</span>
+
       <div class="container contact-wrap">
         <div class="contact-card big">
           <h4>Let’s connect.</h4>
           <p>
-            You can use this section for your public contact email, GitHub profile, LinkedIn, or Play Store developer page.
-            Replace the sample links below with your real links.
+            I’m interested in SAP-related process improvements, Laravel internal systems, CMS dashboards,
+            mobile utility apps, and practical software ideas.
           </p>
+
           <div class="contact-links">
             <a href="mailto:nirmal.appstudio@gmail.com">nirmal.appstudio@gmail.com</a>
             <a href="https://github.com/sahanpasindu" target="_blank" rel="noopener">github.com/sahanpasindu</a>
-            <a href="#">LinkedIn profile link</a>
+            <a href="https://www.youtube.com/c/CodeCampSriLanka" target="_blank" rel="noopener">Code Camp Sri Lanka</a>
+            <a href="https://sites.google.com/view/appstudio-video-splitter" target="_blank" rel="noopener">Video Splitter Project Page</a>
           </div>
         </div>
 
         <div class="contact-card">
           <h4>Current Interests</h4>
-          <p>ERP process control, SAP reports, Laravel systems, Flutter apps, Play Store publishing, UI/UX design, and automation.</p>
+          <p>
+            ERP process control, SAP reports, Laravel systems, Filament/CMS dashboards, Flutter apps,
+            Play Store publishing, UI/UX design, and automation.
+          </p>
+
           <div class="tags">
             <span class="tag">SAP B1</span>
             <span class="tag">Laravel</span>
             <span class="tag">Flutter</span>
+            <span class="tag">CMS</span>
             <span class="tag">GitHub Pages</span>
             <span class="tag">Business Systems</span>
           </div>
@@ -1068,6 +1372,52 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const navLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+    const sections = navLinks
+      .map((link) => {
+        const id = link.getAttribute('href');
+        const section = document.querySelector(id);
+        return section ? { id, section, link } : null;
+      })
+      .filter(Boolean);
+
+    function setActiveLink(activeId) {
+      navLinks.forEach((link) => {
+        link.classList.toggle('active', link.getAttribute('href') === activeId);
+      });
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntries = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visibleEntries.length) {
+          setActiveLink(`#${visibleEntries[0].target.id}`);
+        }
+      },
+      {
+        root: null,
+        rootMargin: '-28% 0px -55% 0px',
+        threshold: [0.1, 0.25, 0.5, 0.75]
+      }
+    );
+
+    sections.forEach(({ section }) => observer.observe(section));
+
+    window.addEventListener('hashchange', () => {
+      if (window.location.hash) {
+        setActiveLink(window.location.hash);
+      }
+    });
+
+    if (window.location.hash) {
+      setActiveLink(window.location.hash);
+    } else {
+      setActiveLink('#about');
+    }
   </script>
 </body>
 </html>
