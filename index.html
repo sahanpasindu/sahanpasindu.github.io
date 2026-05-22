@@ -359,6 +359,17 @@
       box-shadow: 0 20px 45px rgba(34, 197, 94, 0.22);
     }
 
+    .profile-photo {
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.20);
+  padding: 3px;
+  background: linear-gradient(
+    135deg,
+    rgba(56, 189, 248, 0.35),
+    rgba(34, 197, 94, 0.25)
+  );
+}
+
     .profile-card h2 {
       position: relative;
       font-size: 28px;
@@ -810,7 +821,11 @@
         </div>
 
         <aside class="profile-card" id="about" aria-label="About Nirmal">
-          <div class="avatar">NE</div>
+          <img 
+  class="avatar profile-photo" 
+  src="https://avatars.githubusercontent.com/u/26884480?v=4" 
+  alt="Nirmal Edirisinghe profile photo" 
+/>
           <h2>Nirmal Edirisinghe</h2>
           <p>
             I like creating simple, useful solutions for real business problems — from SAP workflows to custom apps and reports.
