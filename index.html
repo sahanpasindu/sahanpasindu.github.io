@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Nirmal Edirisinghe | SAP Admin & App Developer</title>
-  <meta name="description" content="Personal portfolio of Nirmal Edirisinghe - SAP Business One Administrator, Laravel developer, Flutter app creator, and business systems problem solver." />
+  <meta name="description"
+    content="Personal portfolio of Nirmal Edirisinghe - SAP Business One Administrator, Laravel developer, Flutter app creator, and business systems problem solver." />
 
   <!-- Link Preview / Social Preview -->
   <meta property="og:title" content="Nirmal Edirisinghe | SAP Admin & App Developer" />
-  <meta property="og:description" content="SAP Business One Administrator, Laravel Developer, Flutter App Creator, and business systems problem solver." />
+  <meta property="og:description"
+    content="SAP Business One Administrator, Laravel Developer, Flutter App Creator, and business systems problem solver." />
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/26884480?v=4" />
   <meta property="og:url" content="https://sahanpasindu.github.io/" />
   <meta property="og:type" content="website" />
@@ -17,12 +20,14 @@
   <!-- Twitter / X Preview -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Nirmal Edirisinghe | SAP Admin & App Developer" />
-  <meta name="twitter:description" content="SAP Business One Administrator, Laravel Developer, Flutter App Creator, and business systems problem solver." />
+  <meta name="twitter:description"
+    content="SAP Business One Administrator, Laravel Developer, Flutter App Creator, and business systems problem solver." />
   <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/26884480?v=4" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
   <style>
     :root {
@@ -69,15 +74,13 @@
       bottom: 0;
       left: 72px;
       width: 1px;
-      background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(56, 189, 248, 0.18) 12%,
-        rgba(56, 189, 248, 0.55) 30%,
-        rgba(167, 139, 250, 0.45) 58%,
-        rgba(34, 197, 94, 0.38) 82%,
-        transparent 100%
-      );
+      background: linear-gradient(to bottom,
+          transparent 0%,
+          rgba(56, 189, 248, 0.18) 12%,
+          rgba(56, 189, 248, 0.55) 30%,
+          rgba(167, 139, 250, 0.45) 58%,
+          rgba(34, 197, 94, 0.38) 82%,
+          transparent 100%);
       z-index: 0;
       pointer-events: none;
     }
@@ -635,11 +638,21 @@
       margin-top: 18px;
     }
 
+    .project-card.app-showcase {
+      grid-column: 1 / -1;
+    }
+
+    .project-card.app-showcase .project-top {
+      align-items: flex-start;
+    }
+
     .app-gallery {
       display: grid;
-      grid-template-columns: repeat(5, minmax(160px, 1fr));
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 14px;
-      margin-top: 22px;
+      margin-top: 24px;
+      width: 100%;
+      overflow: hidden;
     }
 
     .app-shot {
@@ -661,7 +674,7 @@
 
     .app-shot img {
       width: 100%;
-      height: 360px;
+      height: 340px;
       object-fit: cover;
       object-position: top center;
       display: block;
@@ -854,7 +867,7 @@
       }
 
       .app-gallery {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
       .app-shot img {
@@ -883,6 +896,17 @@
 
       .section-head p {
         margin-top: 12px;
+      }
+    }
+
+
+    @media (max-width: 720px) {
+      .app-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .app-shot img {
+        height: 300px;
       }
     }
 
@@ -1000,7 +1024,8 @@
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#projects">View My Work</a>
-            <a class="btn btn-outline" href="https://github.com/sahanpasindu" target="_blank" rel="noopener">GitHub Profile</a>
+            <a class="btn btn-outline" href="https://github.com/sahanpasindu" target="_blank" rel="noopener">GitHub
+              Profile</a>
             <a class="btn btn-outline" href="#contact">Contact Me</a>
           </div>
 
@@ -1021,11 +1046,8 @@
         </div>
 
         <aside class="profile-card" id="about" aria-label="About Nirmal">
-          <img
-            class="avatar profile-photo"
-            src="https://avatars.githubusercontent.com/u/26884480?v=4"
-            alt="Nirmal Edirisinghe profile photo"
-          />
+          <img class="avatar profile-photo" src="https://avatars.githubusercontent.com/u/26884480?v=4"
+            alt="Nirmal Edirisinghe profile photo" />
 
           <h2>Nirmal Edirisinghe</h2>
 
@@ -1088,7 +1110,8 @@
             <p>Programming and technology learning content.</p>
           </a>
 
-          <a class="link-card" href="https://sites.google.com/view/appstudio-video-splitter" target="_blank" rel="noopener">
+          <a class="link-card" href="https://sites.google.com/view/appstudio-video-splitter" target="_blank"
+            rel="noopener">
             <span>App Site</span>
             <h4>Video Splitter</h4>
             <p>Project page for my mobile video utility app.</p>
@@ -1119,7 +1142,8 @@
           <article class="service-card">
             <div class="card-icon">🏢</div>
             <h4>SAP Business One Administration</h4>
-            <p>Managing users, authorizations, approvals, posting periods, inventory flows, production support, and day-to-day SAP issues.</p>
+            <p>Managing users, authorizations, approvals, posting periods, inventory flows, production support, and
+              day-to-day SAP issues.</p>
             <div class="tags">
               <span class="tag">Authorizations</span>
               <span class="tag">Approvals</span>
@@ -1131,7 +1155,8 @@
           <article class="service-card">
             <div class="card-icon">🧩</div>
             <h4>Internal System Development</h4>
-            <p>Developing practical web-based systems for requests, approvals, warehouse issue flows, GRNs, alerts, dashboards, and logs.</p>
+            <p>Developing practical web-based systems for requests, approvals, warehouse issue flows, GRNs, alerts,
+              dashboards, and logs.</p>
             <div class="tags">
               <span class="tag">Laravel</span>
               <span class="tag">MySQL</span>
@@ -1143,7 +1168,8 @@
           <article class="service-card">
             <div class="card-icon">🚀</div>
             <h4>Mobile Utility Apps</h4>
-            <p>Creating Android apps with clean UI, useful tools, export features, and Play Store-ready presentation.</p>
+            <p>Creating Android apps with clean UI, useful tools, export features, and Play Store-ready presentation.
+            </p>
             <div class="tags">
               <span class="tag">Flutter</span>
               <span class="tag">Android</span>
@@ -1164,7 +1190,8 @@
             <div class="eyebrow">Project Showcase</div>
             <h3>Systems, apps, and CMS work I can show.</h3>
           </div>
-          <p>Selected work that shows my practical knowledge in SAP workflows, Laravel systems, CMS dashboards, and mobile app development.</p>
+          <p>Selected work that shows my practical knowledge in SAP workflows, Laravel systems, CMS dashboards, and
+            mobile app development.</p>
         </div>
 
         <div class="showcase-grid">
@@ -1173,7 +1200,8 @@
               <div>
                 <h4>Stationery Item System</h4>
                 <p>
-                  A Laravel-based internal system for stationery requests and warehouse issue workflows. It covers user requests,
+                  A Laravel-based internal system for stationery requests and warehouse issue workflows. It covers user
+                  requests,
                   supervisor approvals, warehouse issuing, partial issues, user confirmation, disputes, GRN handling,
                   stock history, dashboards, and activity logs.
                 </p>
@@ -1195,7 +1223,7 @@
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card app-showcase">
             <div class="project-top">
               <div>
                 <h4>Video Splitter App</h4>
@@ -1216,32 +1244,41 @@
             </div>
 
             <div class="project-links">
-              <a class="project-link" href="https://sites.google.com/view/appstudio-video-splitter" target="_blank" rel="noopener">Open Project Page</a>
+              <a class="project-link" href="https://sites.google.com/view/appstudio-video-splitter" target="_blank"
+                rel="noopener">Open Project Page</a>
             </div>
 
             <div class="app-gallery" aria-label="Video Splitter app screenshots and promotional images">
               <a class="app-shot" href="assets/video-splitter/trim-cut-center.png" target="_blank" rel="noopener">
-                <img src="assets/video-splitter/trim-cut-center.png" alt="Video Splitter trim, cut center, or split in two preview" loading="lazy">
+                <img src="assets/video-splitter/trim-cut-center.png"
+                  alt="Video Splitter trim, cut center, or split in two preview" loading="lazy">
                 <span>Trim / Cut Center</span>
               </a>
 
-              <a class="app-shot" href="assets/video-splitter/split-duration-quantity.png" target="_blank" rel="noopener">
-                <img src="assets/video-splitter/split-duration-quantity.png" alt="Video Splitter split by duration or quantity preview" loading="lazy">
+              <a class="app-shot" href="assets/video-splitter/split-duration-quantity.png" target="_blank"
+                rel="noopener">
+                <img src="assets/video-splitter/split-duration-quantity.png"
+                  alt="Video Splitter split by duration or quantity preview" loading="lazy">
                 <span>Duration / Quantity</span>
               </a>
 
-              <a class="app-shot" href="assets/video-splitter/social-media-ready-clips.png" target="_blank" rel="noopener">
-                <img src="assets/video-splitter/social-media-ready-clips.png" alt="Video Splitter social media ready clips preview" loading="lazy">
+              <a class="app-shot" href="assets/video-splitter/social-media-ready-clips.png" target="_blank"
+                rel="noopener">
+                <img src="assets/video-splitter/social-media-ready-clips.png"
+                  alt="Video Splitter social media ready clips preview" loading="lazy">
                 <span>Social Ready</span>
               </a>
 
               <a class="app-shot" href="assets/video-splitter/custom-split-points.png" target="_blank" rel="noopener">
-                <img src="assets/video-splitter/custom-split-points.png" alt="Video Splitter custom split points preview" loading="lazy">
+                <img src="assets/video-splitter/custom-split-points.png"
+                  alt="Video Splitter custom split points preview" loading="lazy">
                 <span>Custom Split</span>
               </a>
 
-              <a class="app-shot" href="assets/video-splitter/video-splitting-made-simple.png" target="_blank" rel="noopener">
-                <img src="assets/video-splitter/video-splitting-made-simple.png" alt="Video Splitter app home screen preview" loading="lazy">
+              <a class="app-shot" href="assets/video-splitter/video-splitting-made-simple.png" target="_blank"
+                rel="noopener">
+                <img src="assets/video-splitter/video-splitting-made-simple.png"
+                  alt="Video Splitter app home screen preview" loading="lazy">
                 <span>App Home</span>
               </a>
             </div>
@@ -1252,8 +1289,10 @@
               <div>
                 <h4>OMS LK Check Project</h4>
                 <p>
-                  A Laravel-based project that demonstrates backend and admin-dashboard knowledge, including structured data management
-                  for brands, categories, products, phones, chargers, charging protocols, and related product information.
+                  A Laravel-based project that demonstrates backend and admin-dashboard knowledge, including structured
+                  data management
+                  for brands, categories, products, phones, chargers, charging protocols, and related product
+                  information.
                 </p>
               </div>
               <span class="status purple">Laravel / CMS</span>
@@ -1273,7 +1312,8 @@
               <div>
                 <h4>NegoIT Blog & CMS Dashboard</h4>
                 <p>
-                  Blog and CMS-related development work, including dashboard-side management for blog content and website publishing.
+                  Blog and CMS-related development work, including dashboard-side management for blog content and
+                  website publishing.
                   This project shows my ability to work with content systems and admin interfaces.
                 </p>
               </div>
@@ -1289,7 +1329,8 @@
             </div>
 
             <div class="project-links">
-              <a class="project-link" href="https://negoit.net/index.php?components=blog&action=list" target="_blank" rel="noopener">Open Blog</a>
+              <a class="project-link" href="https://negoit.net/index.php?components=blog&action=list" target="_blank"
+                rel="noopener">Open Blog</a>
             </div>
           </article>
 
@@ -1313,7 +1354,8 @@
             </div>
 
             <div class="project-links">
-              <a class="project-link" href="https://github.com/sahanpasindu" target="_blank" rel="noopener">Visit GitHub</a>
+              <a class="project-link" href="https://github.com/sahanpasindu" target="_blank" rel="noopener">Visit
+                GitHub</a>
             </div>
           </article>
 
@@ -1363,7 +1405,8 @@
           </p>
 
           <div class="contact-links">
-            <a href="https://www.youtube.com/c/CodeCampSriLanka" target="_blank" rel="noopener">Visit YouTube Channel</a>
+            <a href="https://www.youtube.com/c/CodeCampSriLanka" target="_blank" rel="noopener">Visit YouTube
+              Channel</a>
           </div>
         </div>
       </div>
@@ -1386,7 +1429,8 @@
             <div class="timeline-date">SAP</div>
             <div>
               <h4>ERP Support & Process Improvements</h4>
-              <p>Supporting departments with SAP access, issue resolution, reports, production flows, warehouse movements, GRNs, and approval behavior.</p>
+              <p>Supporting departments with SAP access, issue resolution, reports, production flows, warehouse
+                movements, GRNs, and approval behavior.</p>
             </div>
           </div>
 
@@ -1394,7 +1438,8 @@
             <div class="timeline-date">Systems</div>
             <div>
               <h4>Workflow-Based Internal Applications</h4>
-              <p>Designing systems around real company needs: request approvals, status tracking, warehouse actions, user confirmations, stock history, and clear audit trails.</p>
+              <p>Designing systems around real company needs: request approvals, status tracking, warehouse actions,
+                user confirmations, stock history, and clear audit trails.</p>
             </div>
           </div>
 
@@ -1402,7 +1447,8 @@
             <div class="timeline-date">CMS</div>
             <div>
               <h4>CMS Dashboards & Admin Panels</h4>
-              <p>Working with dashboard-side interfaces for content, product data, categories, brands, and business information management.</p>
+              <p>Working with dashboard-side interfaces for content, product data, categories, brands, and business
+                information management.</p>
             </div>
           </div>
 
@@ -1410,7 +1456,8 @@
             <div class="timeline-date">Apps</div>
             <div>
               <h4>Simple Tools With Clean UI</h4>
-              <p>Building lightweight mobile tools with strong usability, clear screens, practical export/share features, and Play Store publishing preparation.</p>
+              <p>Building lightweight mobile tools with strong usability, clear screens, practical export/share
+                features, and Play Store publishing preparation.</p>
             </div>
           </div>
         </div>
@@ -1432,7 +1479,8 @@
             <a href="mailto:nirmal.appstudio@gmail.com">nirmal.appstudio@gmail.com</a>
             <a href="https://github.com/sahanpasindu" target="_blank" rel="noopener">github.com/sahanpasindu</a>
             <a href="https://www.youtube.com/c/CodeCampSriLanka" target="_blank" rel="noopener">Code Camp Sri Lanka</a>
-            <a href="https://sites.google.com/view/appstudio-video-splitter" target="_blank" rel="noopener">Video Splitter Project Page</a>
+            <a href="https://sites.google.com/view/appstudio-video-splitter" target="_blank" rel="noopener">Video
+              Splitter Project Page</a>
           </div>
         </div>
 
@@ -1512,4 +1560,5 @@
     }
   </script>
 </body>
+
 </html>
