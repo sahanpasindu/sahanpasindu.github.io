@@ -635,6 +635,54 @@
       margin-top: 18px;
     }
 
+    .app-gallery {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(160px, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .app-shot {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.20);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .app-shot:hover {
+      transform: translateY(-6px) scale(1.01);
+      border-color: rgba(56, 189, 248, 0.42);
+      box-shadow: 0 24px 60px rgba(56, 189, 248, 0.14);
+    }
+
+    .app-shot img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .app-shot span {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      padding: 9px 10px;
+      border-radius: 14px;
+      background: rgba(7, 17, 31, 0.72);
+      backdrop-filter: blur(10px);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 900;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
     .project-link {
       display: inline-flex;
       align-items: center;
@@ -804,6 +852,14 @@
       .quick-links {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .app-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .app-shot img {
+        height: 320px;
+      }
     }
 
     @media (max-width: 860px) {
@@ -871,6 +927,15 @@
       .stats,
       .quick-links {
         grid-template-columns: 1fr;
+      }
+
+      .app-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .app-shot img {
+        height: auto;
+        max-height: none;
       }
 
       .project-top,
@@ -1152,6 +1217,33 @@
 
             <div class="project-links">
               <a class="project-link" href="https://sites.google.com/view/appstudio-video-splitter" target="_blank" rel="noopener">Open Project Page</a>
+            </div>
+
+            <div class="app-gallery" aria-label="Video Splitter app screenshots and promotional images">
+              <a class="app-shot" href="assets/video-splitter/trim-cut-center.png" target="_blank" rel="noopener">
+                <img src="assets/video-splitter/trim-cut-center.png" alt="Video Splitter trim, cut center, or split in two preview" loading="lazy">
+                <span>Trim / Cut Center</span>
+              </a>
+
+              <a class="app-shot" href="assets/video-splitter/split-duration-quantity.png" target="_blank" rel="noopener">
+                <img src="assets/video-splitter/split-duration-quantity.png" alt="Video Splitter split by duration or quantity preview" loading="lazy">
+                <span>Duration / Quantity</span>
+              </a>
+
+              <a class="app-shot" href="assets/video-splitter/social-media-ready-clips.png" target="_blank" rel="noopener">
+                <img src="assets/video-splitter/social-media-ready-clips.png" alt="Video Splitter social media ready clips preview" loading="lazy">
+                <span>Social Ready</span>
+              </a>
+
+              <a class="app-shot" href="assets/video-splitter/custom-split-points.png" target="_blank" rel="noopener">
+                <img src="assets/video-splitter/custom-split-points.png" alt="Video Splitter custom split points preview" loading="lazy">
+                <span>Custom Split</span>
+              </a>
+
+              <a class="app-shot" href="assets/video-splitter/video-splitting-made-simple.png" target="_blank" rel="noopener">
+                <img src="assets/video-splitter/video-splitting-made-simple.png" alt="Video Splitter app home screen preview" loading="lazy">
+                <span>App Home</span>
+              </a>
             </div>
           </article>
 
