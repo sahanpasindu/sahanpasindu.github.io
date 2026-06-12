@@ -13,20 +13,22 @@
     :root {
       --bg: #090b14;
       --card: #121827;
-      --card-soft: #172033;
       --text: #f8fafc;
       --muted: #a8b3c7;
       --line: rgba(255, 255, 255, 0.1);
       --primary: #7c3aed;
       --secondary: #06b6d4;
       --accent: #22c55e;
-      --danger: #fb7185;
-      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
       --radius: 24px;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
     }
 
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -45,6 +47,11 @@
       text-decoration: none;
     }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     .container {
       width: min(1120px, calc(100% - 32px));
       margin: 0 auto;
@@ -55,16 +62,17 @@
       top: 0;
       z-index: 10;
       backdrop-filter: blur(16px);
-      background: rgba(9, 11, 20, 0.76);
+      background: rgba(9, 11, 20, 0.78);
       border-bottom: 1px solid var(--line);
     }
 
     .nav {
-      height: 72px;
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
+      padding: 14px 0;
     }
 
     .brand {
@@ -79,11 +87,11 @@
       width: 42px;
       height: 42px;
       border-radius: 14px;
-      background:
-        linear-gradient(135deg, var(--primary), var(--secondary));
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
       display: grid;
       place-items: center;
       box-shadow: 0 16px 40px rgba(124, 58, 237, 0.35);
+      flex: 0 0 auto;
     }
 
     .logo span {
@@ -101,6 +109,8 @@
       gap: 18px;
       color: var(--muted);
       font-size: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .nav-links a:hover {
@@ -113,8 +123,8 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 42px;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 44px;
       align-items: center;
     }
 
@@ -195,145 +205,64 @@
       transform: translateY(-2px);
     }
 
-    .phone-card {
+    .hero-art {
       position: relative;
-      padding: 18px;
-      border-radius: 36px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04));
+      border-radius: 34px;
+      padding: 12px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05));
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
-    }
-
-    .phone-screen {
-      border-radius: 28px;
-      background:
-        radial-gradient(circle at 20% 15%, rgba(124, 58, 237, 0.35), transparent 34%),
-        linear-gradient(180deg, #101827, #070a12);
-      border: 1px solid rgba(255, 255, 255, 0.12);
       overflow: hidden;
-      min-height: 520px;
-      padding: 18px;
     }
 
-    .phone-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 18px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .preview {
-      height: 230px;
-      border-radius: 24px;
-      background:
-        linear-gradient(135deg, rgba(124, 58, 237, 0.65), rgba(6, 182, 212, 0.42)),
-        linear-gradient(45deg, #1f2937, #111827);
-      display: grid;
-      place-items: center;
-      position: relative;
-      overflow: hidden;
-      margin-bottom: 16px;
-    }
-
-    .preview::before {
+    .hero-art::before {
       content: "";
       position: absolute;
-      width: 180%;
-      height: 90px;
-      background: repeating-linear-gradient(90deg,
-          rgba(255, 255, 255, 0.18) 0 8px,
-          transparent 8px 22px);
-      transform: rotate(-15deg);
-      opacity: 0.32;
+      inset: -80px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(124, 58, 237, 0.28), transparent 34%),
+        radial-gradient(circle at 80% 40%, rgba(6, 182, 212, 0.25), transparent 30%);
+      pointer-events: none;
     }
 
-    .play {
+    .hero-art img {
       position: relative;
-      width: 64px;
-      height: 64px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.22);
-      backdrop-filter: blur(10px);
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(255, 255, 255, 0.32);
+      width: 100%;
+      border-radius: 26px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
     }
 
-    .play::after {
-      content: "";
-      width: 0;
-      height: 0;
-      border-top: 12px solid transparent;
-      border-bottom: 12px solid transparent;
-      border-left: 18px solid white;
-      margin-left: 4px;
-    }
-
-    .tool-row {
+    .mini-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-bottom: 14px;
+      gap: 12px;
+      margin-top: 18px;
     }
 
-    .tool {
-      padding: 12px 10px;
-      border-radius: 16px;
+    .mini-stat {
+      padding: 14px;
+      border-radius: 18px;
       background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 12px;
-      color: #dbeafe;
+      border: 1px solid var(--line);
       text-align: center;
     }
 
-    .timeline {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 6px;
-      margin: 20px 0;
-    }
-
-    .frame {
-      height: 46px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, rgba(124, 58, 237, 0.8), rgba(6, 182, 212, 0.5));
-      opacity: 0.9;
-    }
-
-    .export-card {
-      padding: 18px;
-      border-radius: 22px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid var(--line);
-    }
-
-    .export-title {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .progress {
-      height: 10px;
-      border-radius: 99px;
-      background: rgba(255, 255, 255, 0.12);
-      overflow: hidden;
-    }
-
-    .progress span {
+    .mini-stat strong {
       display: block;
-      width: 72%;
-      height: 100%;
-      border-radius: inherit;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      font-size: 18px;
+      color: white;
+    }
+
+    .mini-stat span {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
     }
 
     section {
       padding: 54px 0;
+      scroll-margin-top: 90px;
     }
 
     .section-head {
@@ -356,42 +285,42 @@
 
     .features {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
     }
 
-    .card {
-      padding: 24px;
+    .feature-card {
       border-radius: var(--radius);
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid var(--line);
+      overflow: hidden;
       box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
     }
 
-    .icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, rgba(124, 58, 237, 0.35), rgba(6, 182, 212, 0.25));
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      margin-bottom: 16px;
-      font-size: 22px;
+    .feature-card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-bottom: 1px solid var(--line);
     }
 
-    .card h3 {
+    .feature-body {
+      padding: 22px;
+    }
+
+    .feature-body h3 {
       margin: 0 0 8px;
-      font-size: 19px;
+      font-size: 20px;
+      letter-spacing: -0.03em;
     }
 
-    .card p {
+    .feature-body p {
       margin: 0;
       color: var(--muted);
       font-size: 15px;
     }
 
-    .privacy-box {
+    .local-box {
       padding: 34px;
       border-radius: 30px;
       background:
@@ -404,7 +333,7 @@
       align-items: center;
     }
 
-    .privacy-box p {
+    .local-box p {
       color: var(--muted);
       margin: 0;
     }
@@ -420,6 +349,23 @@
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid var(--line);
       color: #dbeafe;
+    }
+
+    .support-card {
+      padding: 30px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--line);
+    }
+
+    .support-card p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .support-card a {
+      color: #67e8f9;
+      font-weight: 700;
     }
 
     footer {
@@ -442,10 +388,14 @@
       flex-wrap: wrap;
     }
 
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
     @media (max-width: 860px) {
 
       .hero-grid,
-      .privacy-box {
+      .local-box {
         grid-template-columns: 1fr;
       }
 
@@ -454,18 +404,11 @@
       }
 
       .nav {
-        height: auto;
-        padding: 18px 0;
         align-items: flex-start;
       }
 
       .nav-links {
-        flex-wrap: wrap;
         justify-content: flex-end;
-      }
-
-      .phone-screen {
-        min-height: 460px;
       }
     }
 
@@ -482,11 +425,12 @@
         padding-top: 52px;
       }
 
-      .tool-row {
+      .mini-stats {
         grid-template-columns: 1fr;
       }
 
-      .privacy-box {
+      .local-box,
+      .support-card {
         padding: 24px;
       }
     }
@@ -503,7 +447,7 @@
 
       <nav class="nav-links">
         <a href="#features">Features</a>
-        <a href="#privacy">Privacy</a>
+        <a href="#local-processing">Local Processing</a>
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms-and-conditions.html">Terms</a>
       </nav>
@@ -542,38 +486,24 @@
           </div>
         </div>
 
-        <div class="phone-card" aria-label="SplitClip app preview">
-          <div class="phone-screen">
-            <div class="phone-top">
-              <span>SplitClip</span>
-              <span>HD Export</span>
-            </div>
+        <div>
+          <div class="hero-art">
+            <img src="../assets/video-splitter/video-splitting-made-simple.png"
+              alt="SplitClip video splitting made simple preview" />
+          </div>
 
-            <div class="preview">
-              <div class="play"></div>
+          <div class="mini-stats">
+            <div class="mini-stat">
+              <strong>Split</strong>
+              <span>by time or quantity</span>
             </div>
-
-            <div class="tool-row">
-              <div class="tool">Split</div>
-              <div class="tool">Trim</div>
-              <div class="tool">Share</div>
+            <div class="mini-stat">
+              <strong>Trim</strong>
+              <span>cut selected parts</span>
             </div>
-
-            <div class="timeline">
-              <div class="frame"></div>
-              <div class="frame"></div>
-              <div class="frame"></div>
-              <div class="frame"></div>
-              <div class="frame"></div>
-              <div class="frame"></div>
-            </div>
-
-            <div class="export-card">
-              <div class="export-title">
-                <span>Exporting clips</span>
-                <span>72%</span>
-              </div>
-              <div class="progress"><span></span></div>
+            <div class="mini-stat">
+              <strong>Share</strong>
+              <span>social-ready clips</span>
             </div>
           </div>
         </div>
@@ -591,50 +521,56 @@
         </div>
 
         <div class="features">
-          <div class="card">
-            <div class="icon">✂</div>
-            <h3>Split videos</h3>
-            <p>Cut longer videos into smaller clips for status updates, stories, or easier sharing.</p>
-          </div>
+          <article class="feature-card">
+            <img src="../assets/video-splitter/split-duration-quantity.png"
+              alt="Split videos by duration or quantity" />
+            <div class="feature-body">
+              <h3>Split by duration or quantity</h3>
+              <p>
+                Cut longer videos into equal parts by time or by number of clips,
+                useful for status videos and quick sharing.
+              </p>
+            </div>
+          </article>
 
-          <div class="card">
-            <div class="icon">▣</div>
-            <h3>Trim selected parts</h3>
-            <p>Choose the part you need and remove unwanted beginning or ending sections.</p>
-          </div>
+          <article class="feature-card">
+            <img src="../assets/video-splitter/custom-split-points.png" alt="Custom split points for videos" />
+            <div class="feature-body">
+              <h3>Custom split points</h3>
+              <p>
+                Choose your own split points when you need more control over where each video clip starts and ends.
+              </p>
+            </div>
+          </article>
 
-          <div class="card">
-            <div class="icon">HD</div>
-            <h3>Export controls</h3>
-            <p>Use output quality, compact size, and audio options to prepare clips your way.</p>
-          </div>
+          <article class="feature-card">
+            <img src="../assets/video-splitter/trim-cut-center.png" alt="Trim and cut selected video parts" />
+            <div class="feature-body">
+              <h3>Trim and cut</h3>
+              <p>
+                Remove unwanted parts and keep only the section you want before exporting your final clip.
+              </p>
+            </div>
+          </article>
 
-          <div class="card">
-            <div class="icon">▶</div>
-            <h3>Preview before export</h3>
-            <p>Preview videos and clips before saving or sharing them from your device.</p>
-          </div>
-
-          <div class="card">
-            <div class="icon">↗</div>
-            <h3>Save and share</h3>
-            <p>Save exported clips to your device or gallery, then share them using other apps.</p>
-          </div>
-
-          <div class="card">
-            <div class="icon">⚙</div>
-            <h3>Easy management</h3>
-            <p>Rename, delete, and manage exported clips inside the app.</p>
-          </div>
+          <article class="feature-card">
+            <img src="../assets/video-splitter/social-media-ready-clips.png" alt="Social media ready video clips" />
+            <div class="feature-body">
+              <h3>Social-ready clips</h3>
+              <p>
+                Save and share exported clips through your favorite apps using your device’s normal sharing options.
+              </p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="privacy">
+    <section id="local-processing">
       <div class="container">
-        <div class="privacy-box">
+        <div class="local-box">
           <div>
-            <h2>Privacy-friendly by design</h2>
+            <h2>Local video processing</h2>
             <p>
               During normal app use, selected videos are processed locally on your device.
               SplitClip does not upload your selected videos to our own server for splitting,
@@ -653,7 +589,7 @@
 
     <section id="support">
       <div class="container">
-        <div class="section-head">
+        <div class="support-card">
           <h2>Support</h2>
           <p>
             For questions, feedback, or support requests, contact:

@@ -11,17 +11,21 @@
   <style>
     :root {
       --bg: #090b14;
-      --card: #121827;
       --text: #f8fafc;
       --muted: #a8b3c7;
       --line: rgba(255, 255, 255, 0.1);
       --primary: #7c3aed;
       --secondary: #06b6d4;
+      --card: rgba(255, 255, 255, 0.06);
       --radius: 24px;
     }
 
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -45,7 +49,7 @@
     }
 
     .container {
-      width: min(920px, calc(100% - 32px));
+      width: min(1120px, calc(100% - 32px));
       margin: 0 auto;
     }
 
@@ -84,6 +88,7 @@
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       display: grid;
       place-items: center;
+      flex: 0 0 auto;
     }
 
     .logo span {
@@ -105,6 +110,11 @@
 
     .nav-links a {
       color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      text-decoration: none;
     }
 
     .hero {
@@ -133,14 +143,63 @@
       color: var(--muted);
       font-size: 18px;
       margin-top: 18px;
+      max-width: 780px;
+    }
+
+    .page-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 290px;
+      gap: 24px;
+      align-items: start;
+      margin: 26px 0 70px;
     }
 
     .content {
-      margin: 26px 0 70px;
-      padding: 34px;
+      padding: 42px;
       border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.06);
+      background: var(--card);
       border: 1px solid var(--line);
+    }
+
+    .side-card {
+      position: sticky;
+      top: 96px;
+      padding: 22px;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--line);
+    }
+
+    .side-card h3 {
+      margin: 0 0 12px;
+      font-size: 16px;
+    }
+
+    .side-card p {
+      margin: 0 0 14px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .side-links {
+      display: grid;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .side-links a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      color: #dbeafe;
+      font-size: 14px;
+    }
+
+    .side-links a:hover {
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
     }
 
     h2 {
@@ -148,6 +207,7 @@
       margin-bottom: 10px;
       font-size: 24px;
       letter-spacing: -0.03em;
+      scroll-margin-top: 100px;
     }
 
     h2:first-child {
@@ -191,9 +251,23 @@
       margin-top: 8px;
     }
 
+    @media (max-width: 920px) {
+      .page-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .side-card {
+        position: static;
+      }
+    }
+
     @media (max-width: 600px) {
       .content {
-        padding: 22px;
+        padding: 24px;
+      }
+
+      .nav {
+        align-items: flex-start;
       }
     }
   </style>
@@ -221,13 +295,13 @@
         <div class="label">Legal</div>
         <h1>Terms & Conditions</h1>
         <p class="intro">
-          Terms and Conditions for SplitClip: Status Maker.
+          These terms explain the rules and responsibilities for using SplitClip: Status Maker.
         </p>
       </div>
     </section>
 
-    <section>
-      <div class="container content">
+    <div class="container page-layout">
+      <article class="content">
         <div class="notice">
           <strong>Effective Date:</strong> 12 June 2026
         </div>
@@ -242,7 +316,7 @@
           If you do not agree, please do not use the app.
         </p>
 
-        <h2>1. Use of the App</h2>
+        <h2 id="use">1. Use of the App</h2>
         <p>
           SplitClip is a video utility app that allows users to select videos, preview videos,
           split videos, trim videos, export clips, save clips, rename clips, delete clips,
@@ -255,7 +329,7 @@
           You are responsible for the content you export, save, publish, or share using the app.
         </p>
 
-        <h2>2. Video Processing</h2>
+        <h2 id="processing">2. Video Processing</h2>
         <p>
           SplitClip processes selected videos based on your actions.
         </p>
@@ -267,7 +341,7 @@
           The app may not support every video format, codec, device, Android version, or storage behavior perfectly.
         </p>
 
-        <h2>3. Device Storage and Permissions</h2>
+        <h2 id="storage">3. Device Storage and Permissions</h2>
         <p>
           Some features depend on device storage, media permissions, notification permissions,
           available free space, and Android system behavior.
@@ -280,7 +354,7 @@
           deleting, or exporting content.
         </p>
 
-        <h2>4. Ads and Optional Purchases</h2>
+        <h2 id="ads">4. Ads and Optional Purchases</h2>
         <p>
           SplitClip may display advertisements.
         </p>
@@ -296,7 +370,7 @@
           Optional purchases do not grant ownership of the app, its brand, or its source code.
         </p>
 
-        <h2>5. Third-Party Services</h2>
+        <h2 id="third-party">5. Third-Party Services</h2>
         <p>
           SplitClip may use third-party services such as advertising, app-store services, billing services,
           analytics, crash reporting, or purchase management services.
@@ -309,7 +383,7 @@
           share exported clips outside SplitClip.
         </p>
 
-        <h2>6. User Responsibility</h2>
+        <h2 id="responsibility">6. User Responsibility</h2>
         <p>
           You agree not to use SplitClip to process, export, save, or share content that:
         </p>
@@ -324,7 +398,7 @@
           export, save, or share.
         </p>
 
-        <h2>7. No Warranty</h2>
+        <h2 id="warranty">7. No Warranty</h2>
         <p>
           SplitClip is provided on an “as is” and “as available” basis.
         </p>
@@ -337,7 +411,7 @@
           messaging app, or third-party service.
         </p>
 
-        <h2>8. Limitation of Liability</h2>
+        <h2 id="liability">8. Limitation of Liability</h2>
         <p>
           To the extent permitted by law, the developer will not be responsible for indirect losses,
           lost content, failed exports, posting mistakes, device problems, third-party app behavior,
@@ -347,7 +421,7 @@
           Please review exported clips before sharing or deleting original files.
         </p>
 
-        <h2>9. Changes to the App</h2>
+        <h2 id="changes-app">9. Changes to the App</h2>
         <p>
           We may update, modify, add, or remove app features from time to time.
         </p>
@@ -356,7 +430,7 @@
           store policy, or technical requirements.
         </p>
 
-        <h2>10. Changes to These Terms</h2>
+        <h2 id="changes-terms">10. Changes to These Terms</h2>
         <p>
           These Terms & Conditions may be updated when the app, legal requirements, store policies,
           or business model changes.
@@ -365,13 +439,34 @@
           The latest version will be posted on the official Terms & Conditions page with an updated effective date.
         </p>
 
-        <h2>11. Contact Us</h2>
+        <h2 id="contact">11. Contact Us</h2>
         <p>
           If you have questions about these Terms & Conditions, please contact us at:
           <a href="mailto:nirmal.appstudio@gmail.com">nirmal.appstudio@gmail.com</a>
         </p>
-      </div>
-    </section>
+      </article>
+
+      <aside class="side-card">
+        <h3>Terms Summary</h3>
+        <p>
+          Use SplitClip only with videos you own or have permission to process. Review exported clips before sharing.
+        </p>
+
+        <h3>Quick Links</h3>
+        <div class="side-links">
+          <a href="#use">Use of the App</a>
+          <a href="#processing">Video Processing</a>
+          <a href="#ads">Ads & Purchases</a>
+          <a href="#responsibility">User Responsibility</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <h3 style="margin-top:18px;">Contact</h3>
+        <p>
+          <a href="mailto:nirmal.appstudio@gmail.com">nirmal.appstudio@gmail.com</a>
+        </p>
+      </aside>
+    </div>
   </main>
 
   <footer>
