@@ -5,8 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Terms & Conditions - SplitClip: Status Maker</title>
-  <meta name="description" content="Terms and Conditions for SplitClip: Status Maker Android app." />
+  <title>SplitClip: Status Maker - Video Splitter App</title>
+  <meta name="description"
+    content="SplitClip: Status Maker is a simple Android video splitter and trimmer app for creating social-ready video clips." />
 
   <style>
     :root {
@@ -16,8 +17,10 @@
       --line: rgba(255, 255, 255, 0.1);
       --primary: #7c3aed;
       --secondary: #06b6d4;
-      --card: rgba(255, 255, 255, 0.06);
+      --accent: #22c55e;
       --radius: 24px;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --card: rgba(255, 255, 255, 0.06);
     }
 
     * {
@@ -32,20 +35,21 @@
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at 20% 0%, rgba(124, 58, 237, 0.28), transparent 36%),
-        radial-gradient(circle at 85% 10%, rgba(6, 182, 212, 0.18), transparent 34%),
-        #090b14;
+        radial-gradient(circle at 20% 0%, rgba(124, 58, 237, 0.35), transparent 36%),
+        radial-gradient(circle at 85% 12%, rgba(6, 182, 212, 0.22), transparent 36%),
+        linear-gradient(180deg, #090b14 0%, #0b1020 55%, #090b14 100%);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     a {
-      color: #67e8f9;
+      color: inherit;
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     .container {
@@ -54,12 +58,12 @@
     }
 
     header {
-      border-bottom: 1px solid var(--line);
-      background: rgba(9, 11, 20, 0.82);
-      backdrop-filter: blur(16px);
       position: sticky;
       top: 0;
       z-index: 10;
+      backdrop-filter: blur(16px);
+      background: rgba(9, 11, 20, 0.78);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav {
@@ -67,8 +71,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
+      gap: 20px;
       padding: 14px 0;
     }
 
@@ -76,9 +79,8 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      color: var(--text);
       font-weight: 800;
-      text-decoration: none;
+      letter-spacing: -0.03em;
     }
 
     .logo {
@@ -88,6 +90,7 @@
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       display: grid;
       place-items: center;
+      box-shadow: 0 16px 40px rgba(124, 58, 237, 0.35);
       flex: 0 0 auto;
     }
 
@@ -102,172 +105,346 @@
 
     .nav-links {
       display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px;
       color: var(--muted);
       font-size: 14px;
-    }
-
-    .nav-links a {
-      color: var(--muted);
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .nav-links a:hover {
       color: var(--text);
-      text-decoration: none;
     }
 
     .hero {
-      padding: 64px 0 26px;
+      padding: 76px 0 58px;
     }
 
-    .label {
-      display: inline-block;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 8px 12px;
-      border-radius: 999px;
       border: 1px solid var(--line);
+      border-radius: 999px;
       background: rgba(255, 255, 255, 0.06);
       color: #dbeafe;
       font-size: 14px;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 18px var(--accent);
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(36px, 6vw, 62px);
-      line-height: 1;
-      letter-spacing: -0.06em;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 0.95;
+      letter-spacing: -0.075em;
     }
 
-    .intro {
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 20%, #c4b5fd 48%, #67e8f9 84%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-text {
+      margin: 24px 0 0;
       color: var(--muted);
       font-size: 18px;
+      max-width: 650px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 16px 42px rgba(6, 182, 212, 0.2);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero-side {
+      justify-self: end;
+      width: 100%;
+      max-width: 430px;
+    }
+
+    .hero-art {
+      position: relative;
+      border-radius: 34px;
+      padding: 12px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-art::before {
+      content: "";
+      position: absolute;
+      inset: -80px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(124, 58, 237, 0.28), transparent 34%),
+        radial-gradient(circle at 80% 40%, rgba(6, 182, 212, 0.25), transparent 30%);
+      pointer-events: none;
+    }
+
+    .hero-art img {
+      position: relative;
+      width: 100%;
+      max-height: 520px;
+      object-fit: cover;
+      border-radius: 26px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
       margin-top: 18px;
-      max-width: 780px;
     }
 
-    .page-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 290px;
-      gap: 24px;
-      align-items: start;
-      margin: 26px 0 70px;
-    }
-
-    .content {
-      padding: 42px;
-      border-radius: var(--radius);
-      background: var(--card);
+    .mini-stat {
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.07);
       border: 1px solid var(--line);
+      text-align: center;
     }
 
-    .side-card {
-      position: sticky;
-      top: 96px;
-      padding: 22px;
-      border-radius: var(--radius);
-      background: var(--card);
-      border: 1px solid var(--line);
-    }
-
-    .side-card h3 {
-      margin: 0 0 12px;
-      font-size: 16px;
-    }
-
-    .side-card p {
-      margin: 0 0 14px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .side-links {
-      display: grid;
-      gap: 8px;
-      margin-top: 14px;
-    }
-
-    .side-links a {
+    .mini-stat strong {
       display: block;
-      padding: 10px 12px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      color: #dbeafe;
-      font-size: 14px;
+      font-size: 18px;
+      color: white;
     }
 
-    .side-links a:hover {
-      text-decoration: none;
-      background: rgba(255, 255, 255, 0.08);
+    .mini-stat span {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    section {
+      padding: 54px 0;
+      scroll-margin-top: 90px;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 28px;
     }
 
     h2 {
-      margin-top: 34px;
-      margin-bottom: 10px;
-      font-size: 24px;
+      margin: 0 0 12px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .feature-card {
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
+    }
+
+    .feature-card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .feature-body {
+      padding: 22px;
+    }
+
+    .feature-body h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
       letter-spacing: -0.03em;
-      scroll-margin-top: 100px;
     }
 
-    h2:first-child {
-      margin-top: 0;
-    }
-
-    p {
+    .feature-body p {
+      margin: 0;
       color: var(--muted);
-      margin: 0 0 14px;
+      font-size: 15px;
     }
 
-    ul {
+    .local-box {
+      padding: 34px;
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at 80% 0%, rgba(34, 197, 94, 0.18), transparent 30%),
+        rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .local-box p {
       color: var(--muted);
-      padding-left: 22px;
-      margin-top: 8px;
+      margin: 0;
     }
 
-    li {
-      margin-bottom: 7px;
+    .check-list {
+      display: grid;
+      gap: 12px;
     }
 
-    .notice {
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(124, 58, 237, 0.13);
-      border: 1px solid rgba(196, 181, 253, 0.22);
-      color: #ede9fe;
-      margin-bottom: 24px;
+    .check {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--line);
+      color: #dbeafe;
+    }
+
+    .support-card {
+      padding: 30px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--line);
+    }
+
+    .support-card p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .support-card a {
+      color: #67e8f9;
+      font-weight: 700;
     }
 
     footer {
-      border-top: 1px solid var(--line);
-      padding: 34px 0;
+      padding: 38px 0;
       color: var(--muted);
+      border-top: 1px solid var(--line);
+      margin-top: 44px;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
     }
 
     .footer-links {
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
-      margin-top: 8px;
     }
 
-    @media (max-width: 920px) {
-      .page-layout {
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 860px) {
+
+      .hero-grid,
+      .local-box {
         grid-template-columns: 1fr;
       }
 
-      .side-card {
-        position: static;
+      .features {
+        grid-template-columns: 1fr;
       }
-    }
 
-    @media (max-width: 600px) {
-      .content {
-        padding: 24px;
+      .hero-side {
+        justify-self: stretch;
+        max-width: 100%;
       }
 
       .nav {
         align-items: flex-start;
+      }
+
+      .nav-links {
+        justify-content: flex-end;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .nav {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding-top: 52px;
+      }
+
+      .mini-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .local-box,
+      .support-card {
+        padding: 24px;
       }
     }
   </style>
@@ -282,7 +459,8 @@
       </a>
 
       <nav class="nav-links">
-        <a href="./">Home</a>
+        <a href="#features">Features</a>
+        <a href="#local-processing">Local Processing</a>
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms-and-conditions.html">Terms</a>
       </nav>
@@ -291,191 +469,160 @@
 
   <main>
     <section class="hero">
-      <div class="container">
-        <div class="label">Legal</div>
-        <h1>Terms & Conditions</h1>
-        <p class="intro">
-          These terms explain the rules and responsibilities for using SplitClip: Status Maker.
-        </p>
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">
+            <span class="badge-dot"></span>
+            Android video splitter and status maker
+          </div>
+
+          <h1>
+            Create social-ready clips with
+            <span class="gradient-text">SplitClip.</span>
+          </h1>
+
+          <p class="hero-text">
+            SplitClip: Status Maker helps you split, trim, preview, export, save, and share video clips directly from
+            your Android device.
+            It is made for quick status videos, story clips, and simple everyday video preparation.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary"
+              href="https://play.google.com/store/apps/details?id=io.github.sahanpasindu.videosplitter" target="_blank"
+              rel="noopener">
+              View on Google Play
+            </a>
+            <a class="btn btn-secondary" href="privacy-policy.html">
+              Read Privacy Policy
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="hero-art">
+            <img src="../assets/video-splitter/video-splitting-made-simple.png"
+              alt="SplitClip video splitting made simple preview" />
+          </div>
+
+          <div class="mini-stats">
+            <div class="mini-stat">
+              <strong>Split</strong>
+              <span>by time or quantity</span>
+            </div>
+            <div class="mini-stat">
+              <strong>Trim</strong>
+              <span>cut selected parts</span>
+            </div>
+            <div class="mini-stat">
+              <strong>Share</strong>
+              <span>social-ready clips</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <div class="container page-layout">
-      <article class="content">
-        <div class="notice">
-          <strong>Effective Date:</strong> 12 June 2026
+    <section id="features">
+      <div class="container">
+        <div class="section-head">
+          <h2>Simple tools for quick video clips</h2>
+          <p>
+            SplitClip focuses on the common actions you need before sharing a video:
+            split, trim, export, save, and share.
+          </p>
         </div>
 
-        <p>
-          These Terms & Conditions apply to the <strong>SplitClip: Status Maker</strong> mobile application
-          developed by <strong>AppStudio / Edirisinghe Sahan Pasindu Nirmal</strong>.
-        </p>
+        <div class="features">
+          <article class="feature-card">
+            <img src="../assets/video-splitter/split-duration-quantity.png"
+              alt="Split videos by duration or quantity" />
+            <div class="feature-body">
+              <h3>Split by duration or quantity</h3>
+              <p>
+                Cut longer videos into equal parts by time or by number of clips,
+                useful for status videos and quick sharing.
+              </p>
+            </div>
+          </article>
 
-        <p>
-          By downloading, installing, or using SplitClip, you agree to these Terms & Conditions.
-          If you do not agree, please do not use the app.
-        </p>
+          <article class="feature-card">
+            <img src="../assets/video-splitter/custom-split-points.png" alt="Custom split points for videos" />
+            <div class="feature-body">
+              <h3>Custom split points</h3>
+              <p>
+                Choose your own split points when you need more control over where each video clip starts and ends.
+              </p>
+            </div>
+          </article>
 
-        <h2 id="use">1. Use of the App</h2>
-        <p>
-          SplitClip is a video utility app that allows users to select videos, preview videos,
-          split videos, trim videos, export clips, save clips, rename clips, delete clips,
-          and share clips.
-        </p>
-        <p>
-          You may use the app only with videos that you own, created, or have permission to process.
-        </p>
-        <p>
-          You are responsible for the content you export, save, publish, or share using the app.
-        </p>
+          <article class="feature-card">
+            <img src="../assets/video-splitter/trim-cut-center.png" alt="Trim and cut selected video parts" />
+            <div class="feature-body">
+              <h3>Trim and cut</h3>
+              <p>
+                Remove unwanted parts and keep only the section you want before exporting your final clip.
+              </p>
+            </div>
+          </article>
 
-        <h2 id="processing">2. Video Processing</h2>
-        <p>
-          SplitClip processes selected videos based on your actions.
-        </p>
-        <p>
-          Before posting, sharing, deleting, or relying on exported clips, you should review the exported
-          files and confirm that they are correct.
-        </p>
-        <p>
-          The app may not support every video format, codec, device, Android version, or storage behavior perfectly.
-        </p>
-
-        <h2 id="storage">3. Device Storage and Permissions</h2>
-        <p>
-          Some features depend on device storage, media permissions, notification permissions,
-          available free space, and Android system behavior.
-        </p>
-        <p>
-          If permissions are denied or device storage is unavailable, some features may not work as expected.
-        </p>
-        <p>
-          You are responsible for keeping backups of important video files before editing,
-          deleting, or exporting content.
-        </p>
-
-        <h2 id="ads">4. Ads and Optional Purchases</h2>
-        <p>
-          SplitClip may display advertisements.
-        </p>
-        <p>
-          The app may offer optional purchases, premium features, or ad-removal options if such features
-          are made available in the app.
-        </p>
-        <p>
-          Any purchase, subscription, refund, cancellation, or payment handling is also subject to the
-          rules and terms of the relevant app store and payment provider.
-        </p>
-        <p>
-          Optional purchases do not grant ownership of the app, its brand, or its source code.
-        </p>
-
-        <h2 id="third-party">5. Third-Party Services</h2>
-        <p>
-          SplitClip may use third-party services such as advertising, app-store services, billing services,
-          analytics, crash reporting, or purchase management services.
-        </p>
-        <p>
-          Those services may have their own terms and privacy policies.
-        </p>
-        <p>
-          We are not responsible for third-party services, third-party apps, or platforms used when you
-          share exported clips outside SplitClip.
-        </p>
-
-        <h2 id="responsibility">6. User Responsibility</h2>
-        <p>
-          You agree not to use SplitClip to process, export, save, or share content that:
-        </p>
-        <ul>
-          <li>Violates any law or regulation</li>
-          <li>Infringes copyright, trademark, privacy, or other rights</li>
-          <li>Contains harmful, abusive, misleading, or unlawful material</li>
-          <li>You do not have permission to use</li>
-        </ul>
-        <p>
-          You are fully responsible for how you use the app and for any content you create,
-          export, save, or share.
-        </p>
-
-        <h2 id="warranty">7. No Warranty</h2>
-        <p>
-          SplitClip is provided on an “as is” and “as available” basis.
-        </p>
-        <p>
-          We do not guarantee that the app will always be uninterrupted, error-free, compatible with every device,
-          or suitable for every video workflow.
-        </p>
-        <p>
-          We do not guarantee that exported clips will always meet the requirements of every social media platform,
-          messaging app, or third-party service.
-        </p>
-
-        <h2 id="liability">8. Limitation of Liability</h2>
-        <p>
-          To the extent permitted by law, the developer will not be responsible for indirect losses,
-          lost content, failed exports, posting mistakes, device problems, third-party app behavior,
-          or losses caused by use or inability to use the app.
-        </p>
-        <p>
-          Please review exported clips before sharing or deleting original files.
-        </p>
-
-        <h2 id="changes-app">9. Changes to the App</h2>
-        <p>
-          We may update, modify, add, or remove app features from time to time.
-        </p>
-        <p>
-          Some features may change depending on app version, Android version, device capability,
-          store policy, or technical requirements.
-        </p>
-
-        <h2 id="changes-terms">10. Changes to These Terms</h2>
-        <p>
-          These Terms & Conditions may be updated when the app, legal requirements, store policies,
-          or business model changes.
-        </p>
-        <p>
-          The latest version will be posted on the official Terms & Conditions page with an updated effective date.
-        </p>
-
-        <h2 id="contact">11. Contact Us</h2>
-        <p>
-          If you have questions about these Terms & Conditions, please contact us at:
-          <a href="mailto:nirmal.appstudio@gmail.com">nirmal.appstudio@gmail.com</a>
-        </p>
-      </article>
-
-      <aside class="side-card">
-        <h3>Terms Summary</h3>
-        <p>
-          Use SplitClip only with videos you own or have permission to process. Review exported clips before sharing.
-        </p>
-
-        <h3>Quick Links</h3>
-        <div class="side-links">
-          <a href="#use">Use of the App</a>
-          <a href="#processing">Video Processing</a>
-          <a href="#ads">Ads & Purchases</a>
-          <a href="#responsibility">User Responsibility</a>
-          <a href="#contact">Contact</a>
+          <article class="feature-card">
+            <img src="../assets/video-splitter/social-media-ready-clips.png" alt="Social media ready video clips" />
+            <div class="feature-body">
+              <h3>Social-ready clips</h3>
+              <p>
+                Save and share exported clips through your favorite apps using your device’s normal sharing options.
+              </p>
+            </div>
+          </article>
         </div>
+      </div>
+    </section>
 
-        <h3 style="margin-top:18px;">Contact</h3>
-        <p>
-          <a href="mailto:nirmal.appstudio@gmail.com">nirmal.appstudio@gmail.com</a>
-        </p>
-      </aside>
-    </div>
+    <section id="local-processing">
+      <div class="container">
+        <div class="local-box">
+          <div>
+            <h2>Local video processing</h2>
+            <p>
+              During normal app use, selected videos are processed locally on your device.
+              SplitClip does not upload your selected videos to our own server for splitting,
+              trimming, or exporting.
+            </p>
+          </div>
+
+          <div class="check-list">
+            <div class="check">Videos are selected from your device</div>
+            <div class="check">Processing happens locally during normal use</div>
+            <div class="check">Sharing happens only when you choose another app</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="support">
+      <div class="container">
+        <div class="support-card">
+          <h2>Support</h2>
+          <p>
+            For questions, feedback, or support requests, contact:
+            <a href="mailto:nirmal.appstudio@gmail.com">nirmal.appstudio@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <div class="container">
-      © 2026 AppStudio. Developed by Edirisinghe Sahan Pasindu Nirmal.
+    <div class="container footer-grid">
+      <div>
+        © 2026 AppStudio. Developed by Edirisinghe Sahan Pasindu Nirmal.
+      </div>
+
       <div class="footer-links">
-        <a href="./">Home</a>
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms-and-conditions.html">Terms & Conditions</a>
+        <a href="mailto:nirmal.appstudio@gmail.com">Contact</a>
       </div>
     </div>
   </footer>
