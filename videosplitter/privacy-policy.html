@@ -5,65 +5,57 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>SplitClip: Status Maker - Video Splitter App</title>
-  <meta name="description"
-    content="SplitClip: Status Maker is a simple Android video splitter and trimmer app for creating social-ready video clips." />
+  <title>Privacy Policy - SplitClip: Status Maker</title>
+  <meta name="description" content="Privacy Policy for SplitClip: Status Maker Android app." />
 
   <style>
     :root {
       --bg: #090b14;
-      --card: #121827;
       --text: #f8fafc;
       --muted: #a8b3c7;
       --line: rgba(255, 255, 255, 0.1);
       --primary: #7c3aed;
       --secondary: #06b6d4;
-      --accent: #22c55e;
+      --card: rgba(255, 255, 255, 0.06);
       --radius: 24px;
-      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
     }
 
     * {
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at 20% 0%, rgba(124, 58, 237, 0.35), transparent 36%),
-        radial-gradient(circle at 85% 12%, rgba(6, 182, 212, 0.22), transparent 36%),
-        linear-gradient(180deg, #090b14 0%, #0b1020 55%, #090b14 100%);
+        radial-gradient(circle at 20% 0%, rgba(124, 58, 237, 0.28), transparent 36%),
+        radial-gradient(circle at 85% 10%, rgba(6, 182, 212, 0.18), transparent 34%),
+        #090b14;
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     a {
-      color: inherit;
+      color: #67e8f9;
       text-decoration: none;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
+    a:hover {
+      text-decoration: underline;
     }
 
     .container {
-      width: min(1120px, calc(100% - 32px));
+      width: min(1000px, calc(100% - 32px));
       margin: 0 auto;
     }
 
     header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(9, 11, 20, 0.82);
+      backdrop-filter: blur(16px);
       position: sticky;
       top: 0;
       z-index: 10;
-      backdrop-filter: blur(16px);
-      background: rgba(9, 11, 20, 0.78);
-      border-bottom: 1px solid var(--line);
     }
 
     .nav {
@@ -71,7 +63,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
+      flex-wrap: wrap;
       padding: 14px 0;
     }
 
@@ -79,8 +72,9 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      color: var(--text);
       font-weight: 800;
-      letter-spacing: -0.03em;
+      text-decoration: none;
     }
 
     .logo {
@@ -90,7 +84,6 @@
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       display: grid;
       place-items: center;
-      box-shadow: 0 16px 40px rgba(124, 58, 237, 0.35);
       flex: 0 0 auto;
     }
 
@@ -105,333 +98,118 @@
 
     .nav-links {
       display: flex;
-      align-items: center;
-      gap: 18px;
+      gap: 16px;
+      flex-wrap: wrap;
       color: var(--muted);
       font-size: 14px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: var(--muted);
     }
 
     .nav-links a:hover {
       color: var(--text);
+      text-decoration: none;
     }
 
     .hero {
-      padding: 86px 0 68px;
+      padding: 64px 0 26px;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.02fr 0.98fr;
-      gap: 44px;
-      align-items: center;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    .label {
+      display: inline-block;
       padding: 8px 12px;
-      border: 1px solid var(--line);
       border-radius: 999px;
+      border: 1px solid var(--line);
       background: rgba(255, 255, 255, 0.06);
       color: #dbeafe;
       font-size: 14px;
-      margin-bottom: 22px;
-    }
-
-    .badge-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 18px var(--accent);
+      margin-bottom: 20px;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(42px, 7vw, 76px);
-      line-height: 0.95;
-      letter-spacing: -0.075em;
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1;
+      letter-spacing: -0.06em;
     }
 
-    .gradient-text {
-      background: linear-gradient(135deg, #ffffff 20%, #c4b5fd 48%, #67e8f9 84%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero-text {
-      margin: 24px 0 0;
+    .intro {
       color: var(--muted);
       font-size: 18px;
-      max-width: 650px;
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 34px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 18px;
-      border-radius: 14px;
-      font-weight: 700;
-      border: 1px solid var(--line);
-      transition: 0.2s ease;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-      border-color: transparent;
-      box-shadow: 0 16px 42px rgba(6, 182, 212, 0.2);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.06);
-      color: var(--text);
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .hero-art {
-      position: relative;
-      border-radius: 34px;
-      padding: 12px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05));
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .hero-art::before {
-      content: "";
-      position: absolute;
-      inset: -80px;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(124, 58, 237, 0.28), transparent 34%),
-        radial-gradient(circle at 80% 40%, rgba(6, 182, 212, 0.25), transparent 30%);
-      pointer-events: none;
-    }
-
-    .hero-art img {
-      position: relative;
-      width: 100%;
-      border-radius: 26px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .mini-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
       margin-top: 18px;
+      max-width: 780px;
     }
 
-    .mini-stat {
-      padding: 14px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.07);
+    .content {
+      margin: 26px 0 70px;
+      padding: 42px;
+      border-radius: var(--radius);
+      background: var(--card);
       border: 1px solid var(--line);
-      text-align: center;
     }
 
-    .mini-stat strong {
-      display: block;
-      font-size: 18px;
-      color: white;
-    }
-
-    .mini-stat span {
-      display: block;
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-
-    section {
-      padding: 54px 0;
-      scroll-margin-top: 90px;
-    }
-
-    .section-head {
-      max-width: 760px;
-      margin-bottom: 28px;
+    .notice {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(103, 232, 249, 0.22);
+      color: #dbeafe;
+      margin-bottom: 24px;
     }
 
     h2 {
-      margin: 0 0 12px;
-      font-size: clamp(28px, 4vw, 44px);
-      line-height: 1.05;
-      letter-spacing: -0.05em;
-    }
-
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .feature-card {
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid var(--line);
-      overflow: hidden;
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
-    }
-
-    .feature-card img {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .feature-body {
-      padding: 22px;
-    }
-
-    .feature-body h3 {
-      margin: 0 0 8px;
-      font-size: 20px;
+      margin-top: 34px;
+      margin-bottom: 10px;
+      font-size: 24px;
       letter-spacing: -0.03em;
     }
 
-    .feature-body p {
-      margin: 0;
+    h2:first-of-type {
+      margin-top: 0;
+    }
+
+    p {
       color: var(--muted);
-      font-size: 15px;
+      margin: 0 0 14px;
     }
 
-    .local-box {
-      padding: 34px;
-      border-radius: 30px;
-      background:
-        radial-gradient(circle at 80% 0%, rgba(34, 197, 94, 0.18), transparent 30%),
-        rgba(255, 255, 255, 0.06);
-      border: 1px solid var(--line);
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 26px;
-      align-items: center;
-    }
-
-    .local-box p {
+    ul {
       color: var(--muted);
-      margin: 0;
+      padding-left: 22px;
+      margin-top: 8px;
     }
 
-    .check-list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .check {
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid var(--line);
-      color: #dbeafe;
-    }
-
-    .support-card {
-      padding: 30px;
-      border-radius: 30px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid var(--line);
-    }
-
-    .support-card p {
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .support-card a {
-      color: #67e8f9;
-      font-weight: 700;
+    li {
+      margin-bottom: 7px;
     }
 
     footer {
-      padding: 38px 0;
-      color: var(--muted);
       border-top: 1px solid var(--line);
-      margin-top: 44px;
-    }
-
-    .footer-grid {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
+      padding: 34px 0;
+      color: var(--muted);
     }
 
     .footer-links {
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
+      margin-top: 8px;
     }
 
     .footer-links a:hover {
       color: var(--text);
+      text-decoration: none;
     }
 
-    @media (max-width: 860px) {
-
-      .hero-grid,
-      .local-box {
-        grid-template-columns: 1fr;
-      }
-
-      .features {
-        grid-template-columns: 1fr;
+    @media (max-width: 600px) {
+      .content {
+        padding: 24px;
       }
 
       .nav {
         align-items: flex-start;
-      }
-
-      .nav-links {
-        justify-content: flex-end;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .nav {
-        flex-direction: column;
-      }
-
-      .nav-links {
-        justify-content: flex-start;
-      }
-
-      .hero {
-        padding-top: 52px;
-      }
-
-      .mini-stats {
-        grid-template-columns: 1fr;
-      }
-
-      .local-box,
-      .support-card {
-        padding: 24px;
       }
     }
   </style>
@@ -446,8 +224,7 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#local-processing">Local Processing</a>
+        <a href="./">Home</a>
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms-and-conditions.html">Terms</a>
       </nav>
@@ -456,160 +233,325 @@
 
   <main>
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="badge">
-            <span class="badge-dot"></span>
-            Android video splitter and status maker
+      <div class="container">
+        <div class="label">Legal</div>
+        <h1>Privacy Policy</h1>
+        <p class="intro">
+          This page explains how SplitClip: Status Maker handles video files, app permissions, local settings,
+          advertising, and support information.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <article class="content">
+          <div class="notice">
+            <strong>Effective Date:</strong> 12 June 2026
           </div>
 
-          <h1>
-            Create social-ready clips with
-            <span class="gradient-text">SplitClip.</span>
-          </h1>
-
-          <p class="hero-text">
-            SplitClip: Status Maker helps you split, trim, preview, export, save, and share video clips directly from
-            your Android device.
-            It is made for quick status videos, story clips, and simple everyday video preparation.
+          <p>
+            This Privacy Policy applies to the <strong>SplitClip: Status Maker</strong> mobile application,
+            developed by <strong>AppStudio / Edirisinghe Sahan Pasindu Nirmal</strong>.
           </p>
 
-          <div class="cta-row">
-            <a class="btn btn-primary"
-              href="https://play.google.com/store/apps/details?id=io.github.sahanpasindu.videosplitter" target="_blank"
-              rel="noopener">
-              View on Google Play
-            </a>
-            <a class="btn btn-secondary" href="privacy-policy.html">
-              Read Privacy Policy
-            </a>
-          </div>
-        </div>
-
-        <div>
-          <div class="hero-art">
-            <img src="../assets/video-splitter/video-splitting-made-simple.png"
-              alt="SplitClip video splitting made simple preview" />
-          </div>
-
-          <div class="mini-stats">
-            <div class="mini-stat">
-              <strong>Split</strong>
-              <span>by time or quantity</span>
-            </div>
-            <div class="mini-stat">
-              <strong>Trim</strong>
-              <span>cut selected parts</span>
-            </div>
-            <div class="mini-stat">
-              <strong>Share</strong>
-              <span>social-ready clips</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="features">
-      <div class="container">
-        <div class="section-head">
-          <h2>Simple tools for quick video clips</h2>
           <p>
-            SplitClip focuses on the common actions you need before sharing a video:
-            split, trim, export, save, and share.
+            SplitClip is a video utility app that allows users to select videos from their device,
+            preview videos, split videos, trim videos, export clips, save clips, rename clips,
+            delete clips, and share clips.
           </p>
-        </div>
 
-        <div class="features">
-          <article class="feature-card">
-            <img src="../assets/video-splitter/split-duration-quantity.png"
-              alt="Split videos by duration or quantity" />
-            <div class="feature-body">
-              <h3>Split by duration or quantity</h3>
-              <p>
-                Cut longer videos into equal parts by time or by number of clips,
-                useful for status videos and quick sharing.
-              </p>
-            </div>
-          </article>
-
-          <article class="feature-card">
-            <img src="../assets/video-splitter/custom-split-points.png" alt="Custom split points for videos" />
-            <div class="feature-body">
-              <h3>Custom split points</h3>
-              <p>
-                Choose your own split points when you need more control over where each video clip starts and ends.
-              </p>
-            </div>
-          </article>
-
-          <article class="feature-card">
-            <img src="../assets/video-splitter/trim-cut-center.png" alt="Trim and cut selected video parts" />
-            <div class="feature-body">
-              <h3>Trim and cut</h3>
-              <p>
-                Remove unwanted parts and keep only the section you want before exporting your final clip.
-              </p>
-            </div>
-          </article>
-
-          <article class="feature-card">
-            <img src="../assets/video-splitter/social-media-ready-clips.png" alt="Social media ready video clips" />
-            <div class="feature-body">
-              <h3>Social-ready clips</h3>
-              <p>
-                Save and share exported clips through your favorite apps using your device’s normal sharing options.
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="local-processing">
-      <div class="container">
-        <div class="local-box">
-          <div>
-            <h2>Local video processing</h2>
-            <p>
-              During normal app use, selected videos are processed locally on your device.
-              SplitClip does not upload your selected videos to our own server for splitting,
-              trimming, or exporting.
-            </p>
-          </div>
-
-          <div class="check-list">
-            <div class="check">Videos are selected from your device</div>
-            <div class="check">Processing happens locally during normal use</div>
-            <div class="check">Sharing happens only when you choose another app</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="support">
-      <div class="container">
-        <div class="support-card">
-          <h2>Support</h2>
           <p>
-            For questions, feedback, or support requests, contact:
+            By using SplitClip, you agree to the practices described in this Privacy Policy.
+          </p>
+
+          <h2>1. Information We Collect</h2>
+          <p>
+            SplitClip does not require users to create an account. We do not directly collect personal
+            information such as your name, phone number, address, username, or password.
+          </p>
+          <p>
+            However, the app may access or process certain information depending on how you use the app.
+          </p>
+
+          <h2>2. Video and Media Files</h2>
+          <p>
+            SplitClip allows users to select video files from their device.
+          </p>
+          <p>
+            Selected videos may be used for app features such as:
+          </p>
+          <ul>
+            <li>Displaying video folders and video files</li>
+            <li>Previewing selected videos</li>
+            <li>Creating video thumbnails and timeline previews</li>
+            <li>Splitting or trimming videos</li>
+            <li>Exporting video clips</li>
+            <li>Saving exported clips to the device or gallery</li>
+            <li>Renaming or deleting exported clips</li>
+            <li>Sharing exported clips through other apps selected by the user</li>
+          </ul>
+          <p>
+            Video files are processed locally on your device during normal app use.
+            SplitClip does not upload your selected videos to our own server for splitting,
+            trimming, or exporting.
+          </p>
+          <p>
+            When you choose to share an exported clip, the selected file is shared using your device’s
+            standard sharing options. The receiving app or service is responsible for how it handles
+            the shared file.
+          </p>
+
+          <h2>3. Permissions Used</h2>
+          <p>
+            SplitClip may request permissions depending on your Android version and the features you use.
+          </p>
+
+          <p><strong>Video / Media Access</strong></p>
+          <p>
+            The app may request access to videos or media files on your device so you can select,
+            preview, split, trim, and export videos.
+          </p>
+          <p>
+            This may include permissions such as:
+          </p>
+          <ul>
+            <li>Read video/media files</li>
+            <li>Read external storage on older Android versions</li>
+            <li>Write to external storage on older Android versions</li>
+          </ul>
+          <p>
+            These permissions are used only to provide the main video selection, editing, export,
+            and save features.
+          </p>
+
+          <p><strong>Notifications</strong></p>
+          <p>
+            The app may request notification permission to show export progress, export completion,
+            or related app notifications.
+          </p>
+          <p>
+            You can allow or deny notification permission from your device settings.
+          </p>
+
+          <h2>4. Local Data and App Settings</h2>
+          <p>
+            SplitClip may store certain settings locally on your device to improve your app experience.
+          </p>
+          <p>
+            This may include:
+          </p>
+          <ul>
+            <li>Theme preference</li>
+            <li>Color preference</li>
+            <li>Output folder preference</li>
+            <li>Save to gallery preference</li>
+            <li>Export notification preference</li>
+            <li>Delete confirmation preference</li>
+            <li>Haptic feedback preference</li>
+            <li>Other app display or behavior settings</li>
+          </ul>
+          <p>
+            These settings are stored locally on your device and are not uploaded to our own server.
+          </p>
+
+          <h2>5. Temporary Files and Thumbnails</h2>
+          <p>
+            SplitClip may create temporary files, thumbnails, or preview images while processing videos
+            or displaying video lists.
+          </p>
+          <p>
+            These temporary files are used only for app functionality, such as showing video previews,
+            timeline frames, and export previews.
+          </p>
+
+          <h2>6. Advertising</h2>
+          <p>
+            SplitClip displays advertisements using Google AdMob.
+          </p>
+          <p>
+            Google AdMob may collect and process certain information to provide ads, measure ad performance,
+            prevent fraud, and improve advertising services. This may include information such as:
+          </p>
+          <ul>
+            <li>Device information</li>
+            <li>Advertising ID</li>
+            <li>App interactions</li>
+            <li>Ad views, clicks, and impressions</li>
+            <li>Approximate location</li>
+            <li>Crash or performance-related information related to ads</li>
+          </ul>
+          <p>
+            Google may use this information according to its own privacy policy and advertising policies.
+            Depending on your device settings, region, and consent choices, ads may be personalized
+            or non-personalized.
+          </p>
+          <p>
+            You can learn more about Google’s privacy practices here:
+            <a href="https://policies.google.com/privacy" target="_blank"
+              rel="noopener">https://policies.google.com/privacy</a>
+          </p>
+
+          <h2>7. Support and Bug Reports</h2>
+          <p>
+            If you contact us through the support or bug report feature, the app may prepare an email
+            using your device’s email app.
+          </p>
+          <p>
+            The support or bug report email may include information such as:
+          </p>
+          <ul>
+            <li>Your message</li>
+            <li>Your optional email address, if you provide it</li>
+            <li>App version</li>
+            <li>Build number</li>
+            <li>Package name</li>
+            <li>Device model</li>
+            <li>Operating system version</li>
+            <li>Platform</li>
+            <li>Screen size or display information</li>
+            <li>Theme mode</li>
+            <li>Language or locale setting</li>
+          </ul>
+          <p>
+            This information is used only to understand your request, provide support, troubleshoot issues,
+            and improve the app.
+          </p>
+          <p>
+            Please do not send private or sensitive videos unless you are comfortable sharing them with us.
+          </p>
+
+          <h2>8. Third-Party Services</h2>
+          <p>
+            SplitClip may use third-party services that may collect information according to their own
+            privacy policies.
+          </p>
+          <p>
+            Third-party services used by the app may include:
+          </p>
+          <ul>
+            <li>Google AdMob</li>
+            <li>Google Play Services</li>
+          </ul>
+          <p>
+            Please review the privacy policies of these third-party services to understand how they collect,
+            use, and share information.
+          </p>
+
+          <h2>9. How We Use Information</h2>
+          <p>
+            Information may be used for the following purposes:
+          </p>
+          <ul>
+            <li>To provide video splitting, trimming, preview, export, save, rename, delete, and share features</li>
+            <li>To display video folders, video files, thumbnails, and timeline previews</li>
+            <li>To save app settings and preferences</li>
+            <li>To show advertisements</li>
+            <li>To improve app performance and user experience</li>
+            <li>To respond to support requests and bug reports</li>
+            <li>To troubleshoot technical issues</li>
+            <li>To comply with legal, security, and policy requirements</li>
+          </ul>
+
+          <h2>10. Data Sharing</h2>
+          <p>
+            We do not sell your personal information.
+          </p>
+          <p>
+            Information may be shared or processed in the following situations:
+          </p>
+          <ul>
+            <li>With Google AdMob for advertising purposes</li>
+            <li>With Google Play Services for app-related functionality</li>
+            <li>When you choose to share exported video clips through another app</li>
+            <li>When you choose to send support or bug report information by email</li>
+            <li>If required by law, regulation, legal process, or enforceable government request</li>
+          </ul>
+
+          <h2>11. Data Retention and Deletion</h2>
+          <p>
+            Selected videos and exported clips remain on your device unless you delete them,
+            clear app data, or uninstall the app.
+          </p>
+          <p>
+            Exported clips may be saved in your selected output folder or gallery depending on your app settings.
+          </p>
+          <p>
+            Local app settings may remain on your device until you clear app data, uninstall the app,
+            or change the settings.
+          </p>
+          <p>
+            Support or bug report emails may be retained as long as necessary to respond to your request,
+            troubleshoot issues, and maintain support records.
+          </p>
+          <p>
+            You may request deletion of support-related information by contacting us at:
             <a href="mailto:nirmal.appstudio@gmail.com">nirmal.appstudio@gmail.com</a>
           </p>
-        </div>
+
+          <h2>12. Security</h2>
+          <p>
+            We value your privacy and use reasonable measures to protect information.
+          </p>
+          <p>
+            However, no method of electronic storage or transmission over the internet is completely secure.
+            Therefore, we cannot guarantee absolute security.
+          </p>
+          <p>
+            Video processing is handled locally on your device during normal app use, and selected videos
+            are not uploaded to our own server for splitting, trimming, or exporting.
+          </p>
+
+          <h2>13. Children’s Privacy</h2>
+          <p>
+            SplitClip is not specifically directed to children under the age of 13.
+          </p>
+          <p>
+            We do not knowingly collect personal information from children. If you believe that a child
+            has provided personal information through the app, please contact us so we can take appropriate action.
+          </p>
+
+          <h2>14. User Control</h2>
+          <p>
+            You can control your data and app behavior in the following ways:
+          </p>
+          <ul>
+            <li>Allow or deny video/media permissions from your device settings</li>
+            <li>Allow or deny notification permission from your device settings</li>
+            <li>Delete exported video clips from your device</li>
+            <li>Clear app data from Android settings</li>
+            <li>Change app preferences inside the app</li>
+            <li>Manage ad personalization through your Google or device advertising settings</li>
+            <li>Uninstall the app</li>
+          </ul>
+
+          <h2>15. Changes to This Privacy Policy</h2>
+          <p>
+            We may update this Privacy Policy from time to time.
+          </p>
+          <p>
+            Any changes will be posted on this page with an updated effective date.
+            You are advised to review this Privacy Policy periodically for any changes.
+          </p>
+
+          <h2>16. Contact Us</h2>
+          <p>
+            If you have any questions, suggestions, or requests regarding this Privacy Policy,
+            please contact us at:
+            <a href="mailto:nirmal.appstudio@gmail.com">nirmal.appstudio@gmail.com</a>
+          </p>
+        </article>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-grid">
-      <div>
-        © 2026 AppStudio. Developed by Edirisinghe Sahan Pasindu Nirmal.
-      </div>
-
+    <div class="container">
+      © 2026 AppStudio. Developed by Edirisinghe Sahan Pasindu Nirmal.
       <div class="footer-links">
+        <a href="./">Home</a>
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms-and-conditions.html">Terms & Conditions</a>
-        <a href="mailto:nirmal.appstudio@gmail.com">Contact</a>
       </div>
     </div>
   </footer>
